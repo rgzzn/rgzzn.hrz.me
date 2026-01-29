@@ -11,21 +11,21 @@ const works = [
     title: "Identity & Access Admin",
     year: "CERTIFIED",
     label: "MICROSOFT",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop"
+    image: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-Entra-Suite-Final-Thumbnail-image?scl=1"
   },
   {
     id: "GA4",
     title: "Website Efficiency",
     year: "ANALYTICS",
     label: "GOOGLE",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+    image: "https://blog.marketing-espresso.com/wp-content/uploads/2023/09/google-analytics-4.jpg"
   },
   {
     id: "SYS",
     title: "Server Infrastructure",
     year: "DEPLOYED",
     label: "ADMIN",
-    image: "https://images.unsplash.com/photo-1558494949-ef526bca4852?q=80&w=800&auto=format&fit=crop"
+    image: "https://img.corrierecomunicazioni.it/wp-content/uploads/2017/11/datacenter-130627170345.jpg"
   }
 ];
 
@@ -34,14 +34,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActi
     <section className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
         <span className="text-xs font-bold tracking-[0.2em] font-mono uppercase">
-          Certifications & Focus
+          Certifications & Competencies
         </span>
         <span className="text-[10px] font-mono hidden md:block">SCROLL TO EXPLORE</span>
       </div>
 
       <div className="flex flex-col">
         {works.map((work) => (
-          <div 
+          <div
             key={work.id}
             className="relative border-b border-black/20 dark:border-white/20 py-10 cursor-none"
             onMouseEnter={() => {

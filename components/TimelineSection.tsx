@@ -15,10 +15,10 @@ const TimelineSection: React.FC = () => {
 
         {/* Item 1 */}
         <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-200">
-          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-black dark:border-white/20 z-10"></div>
+          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-black dark:border-white/20 z-10 animate-pulse-soft"></div>
           <span className="font-mono text-sm font-bold opacity-60 mb-2 block">May 2023 — Present</span>
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">IT & Social Media Manager</h4>
-          <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">COMEGA // Forlì</span>
+          <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">COMEGA S.r.l. // Forlì</span>
           <p className="font-serif italic text-xl leading-relaxed opacity-90 max-w-lg border-l-2 border-black dark:border-white/30 pl-4">
             Gestione dell'amministrazione server e dell'infrastruttura IT, guidando al contempo la presenza digitale attraverso una gestione strategica dei Social Media.
           </p>
@@ -26,10 +26,10 @@ const TimelineSection: React.FC = () => {
 
         {/* Item 2 */}
         <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-300">
-          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-black dark:bg-white border-2 border-black dark:border-white z-10"></div>
+          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-black dark:border-white/20 z-10 animate-pulse-soft"></div>
           <span className="font-mono text-sm font-bold opacity-60 mb-2 block">May 2023 — Present</span>
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">IT Manager</h4>
-          <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">BIPRES S.p.A. // Italia</span>
+          <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">BIPRES S.p.A. // Portico di Romagna</span>
           <p className="font-serif italic text-xl leading-relaxed opacity-90 max-w-lg border-l-2 border-primary pl-4">
             Supervisione delle operazioni IT, implementazione di Microsoft Entra ID e garanzia di una solida sicurezza e amministrazione del sistema.
           </p>
@@ -37,9 +37,9 @@ const TimelineSection: React.FC = () => {
 
         {/* Item 3 */}
         <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-500">
-          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-black dark:border-white/20 z-10"></div>
-          <span className="font-mono text-sm font-bold opacity-60 mb-2 block">Sep 2021 — Present</span>
-          <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">Purchasing Specialist</h4>
+          <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-white dark:bg-white border-2 border-black dark:border-white/20 z-10"></div>
+          <span className="font-mono text-sm font-bold opacity-60 mb-2 block">Sep 2021 — Apr 2023</span>
+          <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">Purchasing Agent</h4>
           <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">BIPRES S.p.A. // Portico di Romagna</span>
           <p className="font-serif italic text-xl leading-relaxed opacity-90 max-w-lg border-l-2 border-black dark:border-white/30 pl-4">
             Gestione delle trattative d'acquisto, ottimizzazione dei processi di approvvigionamento e gestione delle relazioni con i fornitori (Apprendistato).
