@@ -23,7 +23,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
       
       {/* Film Noise Overlay */}
       <div className="bg-noise"></div>

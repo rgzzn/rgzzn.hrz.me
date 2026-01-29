@@ -32,7 +32,7 @@ const works = [
 const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActiveLabel }) => {
   return (
     <section className="max-w-6xl mx-auto w-full mb-40">
-      <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black pb-2">
+      <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
         <span className="text-xs font-bold tracking-[0.2em] font-mono uppercase">
           Certifications & Focus
         </span>
@@ -43,7 +43,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActi
         {works.map((work) => (
           <div 
             key={work.id}
-            className="group relative border-b border-black/20 hover:border-black transition-colors py-10 cursor-none"
+            className="relative border-b border-black/20 dark:border-white/20 py-10 cursor-none"
             onMouseEnter={() => {
               setActiveImage(work.image);
               setActiveLabel(work.label);
@@ -54,13 +54,13 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActi
             }}
           >
             <div className="flex items-baseline gap-6 md:gap-12 relative z-20 pointer-events-none">
-              <span className="font-mono text-xl md:text-2xl opacity-40 group-hover:opacity-100 group-hover:text-black transition-all">
+              <span className="font-mono text-xl md:text-2xl opacity-60">
                 {work.id}
               </span>
-              <h3 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter group-hover:translate-x-4 transition-transform duration-300">
+              <h3 className="text-3xl md:text-6xl font-bold uppercase tracking-tighter">
                 {work.title}
               </h3>
-              <span className="ml-auto text-xs font-mono border border-black px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline-block">
+              <span className="ml-auto text-xs font-mono border border-black dark:border-white/20 px-2 py-1 rounded-full opacity-60 hidden md:inline-block">
                 {work.year}
               </span>
             </div>
