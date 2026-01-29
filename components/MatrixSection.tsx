@@ -7,8 +7,8 @@ const MatrixSection: React.FC = () => {
         <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-8 opacity-50 font-mono">
           The Hybrid Philosophy
         </h3>
-        <p className="text-3xl md:text-5xl leading-[1.2] mb-10 tracking-tight font-medium text-black">
-          "La creatività è una <span className="font-serif italic font-normal text-4xl md:text-6xl text-black mr-1">mente selvaggia</span> 
+        <p className="text-3xl md:text-5xl leading-[1.2] mb-10 tracking-tight font-medium text-black dark:text-white">
+          "La creatività è una <span className="font-serif italic font-normal text-4xl md:text-6xl text-black dark:text-white mr-1">mente selvaggia</span> 
           e un <span className="font-mono bg-primary text-white px-2 py-0.5 text-2xl md:text-4xl selection:bg-black selection:text-white inline-block transform -rotate-1 mt-2 md:mt-0">occhio disciplinato</span>."
         </p>
         <p className="text-lg opacity-80 max-w-xl font-mono leading-relaxed border-l-2 border-primary pl-4">
@@ -18,7 +18,7 @@ const MatrixSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="md:col-span-5 flex flex-col items-center justify-center p-8 bg-neutral-50 rounded-none border border-black/10 aspect-square relative overflow-hidden group">
+      <div className="md:col-span-5 flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-black-soft rounded-none border border-black/10 dark:border-white/10 aspect-square relative overflow-hidden">
         {/* Animated Background Pulse */}
         <div className="absolute inset-0 bg-primary/5 animate-pulse-slow"></div>
         
@@ -33,13 +33,13 @@ const MatrixSection: React.FC = () => {
           <div className="absolute -right-8 top-1/2 -translate-y-1/2 writing-vertical-rl text-[10px] font-mono font-bold tracking-widest uppercase opacity-40 animate-enter-up delay-200">Chaos</div>
           
           {/* Grid Lines - Animated drawing */}
-          <div className="absolute inset-0 border border-black/10"></div>
-          <div className="absolute top-1/2 left-0 w-0 h-[1px] bg-black/10 animate-draw-w delay-300"></div>
-          <div className="absolute left-1/2 top-0 w-[1px] h-0 bg-black/10 animate-draw-h delay-300"></div>
+          <div className="absolute inset-0 border border-black/10 dark:border-white/10"></div>
+          <div className="absolute top-1/2 left-0 w-0 h-[1px] bg-black/10 dark:bg-white/10 animate-draw-w delay-300"></div>
+          <div className="absolute left-1/2 top-0 w-[1px] h-0 bg-black/10 dark:bg-white/10 animate-draw-h delay-300"></div>
           
           {/* The "RG" Dot - Pulse Animation */}
-          <div className="absolute top-[40%] left-[65%] w-8 h-8 -translate-x-1/2 -translate-y-1/2 bg-black rounded-full flex items-center justify-center z-10 shadow-xl ring-4 ring-primary/30 animate-pulse-slow group-hover:scale-110 transition-transform duration-500">
-            <span className="text-[10px] text-white font-bold font-mono">RG</span>
+          <div className="absolute top-[40%] left-[65%] w-8 h-8 -translate-x-1/2 -translate-y-1/2 bg-black dark:bg-white rounded-full flex items-center justify-center z-10 shadow-xl ring-4 ring-primary/30 animate-pulse-slow">
+            <span className="text-[10px] text-white dark:text-black font-bold font-mono">RG</span>
           </div>
           
           {/* Quadrant Labels */}
