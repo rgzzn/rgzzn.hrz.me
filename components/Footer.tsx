@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             VALIDATE MY PROFILE
           </span>
           <span className="absolute -right-4 md:-right-8 -top-6 text-[10px] md:text-xs font-mono bg-black dark:bg-white text-primary px-2 py-1 rotate-12">
-            SECURE_HANDSHAKE_INITIATED
+            SECURE_LINKEDIN_LINK
           </span>
         </a>
       </div>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           <a href="#" className="p-3 border border-black dark:border-white/20 rounded-full">
             <Palette size={20} />
           </a>
-          <a href="#" className="p-3 border border-black dark:border-white/20 rounded-full">
+          <a href="https://www.linkedin.com/in/rgzzn/" className="p-3 border border-black dark:border-white/20 rounded-full">
             <AtSign size={20} />
           </a>
         </div>
