@@ -44,7 +44,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
   return (
     <section className="max-w-6xl mx-auto w-full relative mb-40">
       <div className="mb-12 opacity-40">
-        <span className="text-xs font-bold tracking-[0.2em] border-b border-black pb-1 font-mono uppercase">
+        <span className="text-xs font-bold tracking-[0.2em] border-b border-black dark:border-white/20 pb-1 font-mono uppercase">
           Competencies
         </span>
       </div>
@@ -53,7 +53,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
         {items.map((item, index) => (
           <div 
             key={index}
-            className="group relative py-4 border-b-2 border-black border-opacity-20 hover:border-opacity-100 transition-all duration-300 cursor-none"
+            className="relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none"
             onMouseEnter={() => {
               setActiveImage(item.image);
               setActiveLabel(item.label);
@@ -64,10 +64,10 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
             }}
           >
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 z-20 relative pointer-events-none">
-              <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter uppercase group-hover:translate-x-4 transition-transform duration-300 ${item.font || ''}`}>
+              <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter uppercase ${item.font || ''}`}>
                 {item.title}
               </h2>
-              <span className={`text-sm md:text-xl opacity-60 group-hover:opacity-100 transition-opacity ${item.font === 'font-mono' ? 'font-mono uppercase text-sm' : 'font-serif italic text-xl'}`}>
+              <span className={`text-sm md:text-xl opacity-60 ${item.font === 'font-mono' ? 'font-mono uppercase text-sm' : 'font-serif italic text-xl'}`}>
                 {item.category}
               </span>
             </div>

@@ -18,14 +18,14 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ activeImage, activeLabel,
         transform: 'translate(-50%, -50%) rotate(-2deg)',
       }}
     >
-      <div className="relative shadow-2xl border-4 border-black bg-black w-[300px] md:w-[500px] aspect-video">
+      <div className="relative shadow-2xl border-4 border-black dark:border-white/40 bg-black w-[300px] md:w-[500px] aspect-video">
         <img 
           src={activeImage} 
           alt="Preview" 
           className="w-full h-full object-cover grayscale contrast-125"
         />
         {activeLabel && (
-          <div className="absolute bottom-4 right-4 bg-primary text-black px-2 py-1 text-xs font-bold font-mono border border-black">
+          <div className="absolute bottom-4 right-4 bg-primary text-black px-2 py-1 text-xs font-bold font-mono border border-black dark:border-white/40">
             {activeLabel}
           </div>
         )}
