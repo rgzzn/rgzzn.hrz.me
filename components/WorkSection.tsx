@@ -97,6 +97,7 @@ const workItems: WorkItem[] = [
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3203.jpeg' },
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3238.jpeg' },
       { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.PNG' },
+      { type: 'video', src: '/assets/work/ipack-ima/VID/Loop-IPACK-IMA.mp4' },
     ],
     downloads: [
       { label: 'Packaging Catalogue (PDF) english', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ENG.PDF' },
