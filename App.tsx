@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import SkillSection from './components/SkillSection';
 import MatrixSection from './components/MatrixSection';
 import TimelineSection from './components/TimelineSection';
-import EducationSection from './components/EducationSection';
+import FocusSection from './components/FocusSection';
 import ProjectSection from './components/ProjectSection';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
@@ -53,7 +53,7 @@ const App: React.FC = () => {
           
           <TimelineSection />
 
-          <EducationSection />
+          <FocusSection />
           
           <ProjectSection 
             setActiveImage={setActiveImage} 

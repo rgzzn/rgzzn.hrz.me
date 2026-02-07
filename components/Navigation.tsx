@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
           { label: "Profile", id: "profile" },
           { label: "Skills", id: "skills" },
           { label: "Experience", id: "experience" },
-          { label: "Education", id: "education" },
+          { label: "Focus", id: "focus" },
           { label: "Portfolio", id: "portfolio" },
           { label: "Contact", id: "contact" },
         ].map((item, index) => (
