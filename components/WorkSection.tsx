@@ -92,19 +92,18 @@ const workItems: WorkItem[] = [
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
     heroImage: withBase('media/work/ipack-ima/images/ipack-hero.jpeg'),
     previewMedia: [
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-hero.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-stand-01.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-social.png') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
     ],
     carousel: [
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-hero.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-stand-01.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-social.png') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
       { type: 'video', src: withBase('media/work/ipack-ima/videos/ipack-loop.mp4') },
     ],
     downloads: [
-      { label: 'Packaging Catalogue (PDF) english', url: withBase('media/work/ipack-ima/pdfs/packaging-catalogue-en.pdf') },
-      { label: 'Packaging Catalogue (PDF) italian', url: withBase('media/work/ipack-ima/pdfs/packaging-catalogue-it.pdf') },
+      { label: 'Packaging Catalogue (PDF)', url: withBase('media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip') },
     ],
   },
 ];
