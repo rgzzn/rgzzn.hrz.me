@@ -47,6 +47,10 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
+
+      <div className="w-full text-center mt-20 mb-8 text-[11px] font-mono opacity-40 uppercase tracking-widest">
+        Luca Ragazzini ©2026
+      </div>
     </footer>
   );
 };
