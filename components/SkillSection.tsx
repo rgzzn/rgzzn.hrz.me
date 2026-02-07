@@ -72,7 +72,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
         {items.map((item, index) => (
           <div
             key={index}
-            className="relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none"
+            className="relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
             onMouseEnter={() => {
               setActiveImage(item.image);
               setActiveLabel(item.label);
@@ -81,6 +81,15 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
               setActiveImage(null);
               setActiveLabel(null);
             }}
+            onFocus={() => {
+              setActiveImage(item.image);
+              setActiveLabel(item.label);
+            }}
+            onBlur={() => {
+              setActiveImage(null);
+              setActiveLabel(null);
+            }}
+            tabIndex={0}
           >
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 z-20 relative pointer-events-none">
               <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter uppercase ${item.font || ''}`}>
