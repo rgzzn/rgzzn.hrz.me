@@ -3,7 +3,7 @@ import { Terminal, Palette, AtSign } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="max-w-6xl mx-auto w-full flex flex-col items-center">
+    <footer id="contact" className="max-w-6xl mx-auto w-full flex flex-col items-center">
       <div className="mb-32 flex flex-col items-center text-center">
         {/* Animated Diamond Grid */}
         <div className="w-24 h-24 mb-10 grid grid-cols-4 grid-rows-4 gap-1 p-2 border-2 border-black dark:border-white/20 animate-spin-slow cursor-crosshair">
@@ -20,17 +20,20 @@ const Footer: React.FC = () => {
 
         <a href="https://www.linkedin.com/in/rgzzn/" target="_blank" rel="noreferrer" className="relative inline-block">
           <span className="font-mono text-xl md:text-4xl lg:text-5xl font-bold tracking-tight border-b-4 border-black dark:border-white/20 pb-2 px-4 py-2 block">
-            VALIDATE MY PROFILE
+            CONTATTAMI SU LINKEDIN
           </span>
           <span className="absolute -right-4 md:-right-8 -top-6 text-[10px] md:text-xs font-mono bg-black dark:bg-white text-primary px-2 py-1 rotate-12">
             SECURE_LINKEDIN_LINK
           </span>
         </a>
+        <p className="mt-6 text-xs font-mono uppercase tracking-widest opacity-60">
+          Contatti completi disponibili su richiesta
+        </p>
       </div>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-end opacity-80 mix-blend-multiply border-t border-black/10 dark:border-white/10 pt-12 pb-8">
         <div className="font-serif italic text-2xl leading-relaxed max-w-sm">
-          "Architettura digitale e narrazione umana."
+          "Architettura digitale, governance IT e narrazione umana."
         </div>
         <div className="flex gap-4 md:justify-end">
           <a href="#" className="p-3 border border-black dark:border-white/20 rounded-full">

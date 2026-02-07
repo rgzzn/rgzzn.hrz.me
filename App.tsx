@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import SkillSection from './components/SkillSection';
 import MatrixSection from './components/MatrixSection';
 import TimelineSection from './components/TimelineSection';
+import EducationSection from './components/EducationSection';
 import ProjectSection from './components/ProjectSection';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
@@ -41,6 +42,8 @@ const App: React.FC = () => {
           
           <Hero />
           
+          <MatrixSection />
+          
           <div className="opacity-0 animate-enter-up delay-300">
             <SkillSection 
               setActiveImage={setActiveImage} 
@@ -48,9 +51,9 @@ const App: React.FC = () => {
             />
           </div>
           
-          <MatrixSection />
-          
           <TimelineSection />
+
+          <EducationSection />
           
           <ProjectSection 
             setActiveImage={setActiveImage} 
