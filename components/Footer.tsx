@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           "Architettura digitale, governance IT e narrazione umana."
         </div>
         <div className="flex gap-4 md:justify-end">
-          <a href="#about" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai all'introduzione">
+          <a href="#profile" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai al profilo">
             <Terminal size={20} />
           </a>
           <a href="#portfolio" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai al portfolio">
