@@ -31,12 +31,6 @@ const Navigation: React.FC = () => {
         ))}
       </nav>
 
-      <div
-        className="flex-shrink-0 text-[10px] font-mono opacity-40 writing-vertical-rl rotate-180 mb-6 tracking-tighter animate-enter-up"
-        style={{ animationDelay: "1200ms", opacity: 0 }}
-      >
-        Luca Ragazzini | ©2026
-      </div>
     </aside>
   );
 };
