@@ -91,17 +91,17 @@ const workItems: WorkItem[] = [
     previewMedia: [
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3203.jpeg' },
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3238.jpeg' },
-      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.PNG' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.png' },
     ],
     carousel: [
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3203.jpeg' },
       { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3238.jpeg' },
-      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.PNG' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.png' },
       { type: 'video', src: '/assets/work/ipack-ima/VID/Loop-IPACK-IMA.mp4' },
     ],
     downloads: [
-      { label: 'Packaging Catalogue (PDF) english', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ENG.PDF' },
-      { label: 'Packaging Catalogue (PDF) italian', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ITA.PDF' },
+      { label: 'Packaging Catalogue (PDF) english', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ENG.pdf' },
+      { label: 'Packaging Catalogue (PDF) italian', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ITA.pdf' },
     ],
   },
 ];
