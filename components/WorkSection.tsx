@@ -89,17 +89,18 @@ const workItems: WorkItem[] = [
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
     heroImage: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop',
     previewMedia: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=800&auto=format&fit=crop' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3203.jpeg' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3238.jpeg' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.PNG' },
     ],
     carousel: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1400&auto=format&fit=crop' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1400&auto=format&fit=crop' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1400&auto=format&fit=crop' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3203.jpeg' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/IMG_3238.jpeg' },
+      { type: 'image', src: '/assets/work/ipack-ima/PIC/linkedin-IpackIMA.PNG' },
     ],
     downloads: [
-      { label: 'Download Assets', url: '/assets/ipack-ima-2025-assets.zip' },
+      { label: 'Packaging Catalogue (PDF) english', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ENG.PDF' },
+      { label: 'Packaging Catalogue (PDF) italian', url: '/assets/work/ipack-ima/PDF/Packaging-Catalogue-ITA.PDF' },
     ],
   },
 ];
