@@ -26,6 +26,7 @@ interface WorkItem {
   previewMedia: MediaItem[];
   carousel: MediaItem[];
   downloads: DownloadItem[];
+  siteUrl?: string; // Link to live site (shown instead of or in addition to downloads)
 }
 
 interface WorkSectionProps {
@@ -105,6 +106,53 @@ const workItems: WorkItem[] = [
       { label: 'Catalogo IPACK-IMA (ZIP)', url: withBase('media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip') },
     ],
   },
+  {
+    id: 'DashB',
+    title: 'DashB App',
+    category: 'TvOS App',
+    period: 'Gennaio 2026',
+    location: 'Forlì · Forlì-Cesena',
+    label: 'DashB',
+    shortDescription: 'Dashboard in stile bento per iPad, Mac e Apple TV: meteo, calendario e notizie in un’unica vista immersiva.',
+    description: 'DashB è una dashboard moderna in stile bento pensata per trasformare uno schermo (iPad, Mac o Apple TV) in un centro di controllo elegante. Meteo con WeatherKit, agenda da Google Calendar e Outlook, ticker notizie da feed RSS con immagini e QR code. Progettata con SwiftUI, design TV-friendly con componenti grandi, contrasto elevato e animazioni morbide.',
+    highlights: [
+      'Meteo intelligente con WeatherKit e aggiornamento automatico',
+      'Agenda giornaliera con eventi da Google Calendar e Microsoft Outlook',
+      'Ticker notizie da feed RSS con immagini e QR code per articoli',
+      'Design TV-friendly con layout bento e leggibilità da lontano',
+      'SwiftUI, OAuth Device Flow, Keychain per token sicuri',
+    ],
+    tags: ['SwiftUI', 'tvOS', 'WeatherKit', 'Calendar', 'RSS', 'Dashboard'],
+    heroImage: withBase('media/work/dashb/images/dashb-hero.jpeg'),
+    previewMedia: [],
+    carousel: [],
+    downloads: [],
+    siteUrl: 'https://dashb.hrz.me',
+  },
+  {
+    id: 'DashB-Site',
+    title: 'DashB Website',
+    category: 'Website',
+    period: 'Gennaio 2026',
+    location: 'Forlì · Forlì-Cesena',
+    label: 'DashB',
+    shortDescription: 'Clone della dashboard Apple TV+ realizzato con React, Vite e Tailwind CSS: design responsive e componenti riutilizzabili.',
+    description: 'Progetto web che replica l’esperienza della dashboard Apple TV+: interfaccia moderna e responsive, architettura a componenti React, styling con Tailwind CSS e tooling Vite per sviluppo veloce. Adatto a tutti i dispositivi.',
+    highlights: [
+      'Design responsive ottimizzato per ogni schermo',
+      'Architettura a componenti React riutilizzabili',
+      'Styling con Tailwind CSS in stile utility-first',
+      'Build e dev server con Vite',
+    ],
+    tags: ['React', 'Vite', 'Tailwind CSS', 'TypeScript', 'Dashboard'],
+    heroImage: withBase('media/work/dashb/images/dashb-hero.jpeg'),
+    previewMedia: [],
+    carousel: [
+      { type: 'image', src: withBase('media/work/dashb/images/dashb-hero.jpeg') },
+    ],
+    downloads: [],
+    siteUrl: 'https://dashb.hrz.me',
+  },
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel }) => {
@@ -133,10 +181,12 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
   }, []);
 
   const goToNext = () => {
+    if (carouselMedia.length === 0) return;
     setCarouselIndex((prev) => (prev + 1) % carouselMedia.length);
   };
 
   const goToPrev = () => {
+    if (carouselMedia.length === 0) return;
     setCarouselIndex((prev) => (prev - 1 + carouselMedia.length) % carouselMedia.length);
   };
 
@@ -150,18 +200,17 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
     <section id="work" className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
         <span className="text-xs font-bold tracking-[0.2em] font-mono uppercase">Work</span>
-        <span className="text-[10px] font-mono hidden md:block">FIERE &amp; PROGETTI</span>
+        <span className="text-[10px] font-mono hidden md:block">LAVORI &amp; PROGETTI</span>
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] mb-12">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">
-            Fiere e progetti speciali
-            <span className="block text-primary">HOST · IPACK-IMA · Milano</span>
+            Lavori e progetti speciali
+            <span className="block text-primary">Graphic Design · Developing · 3D Rendering</span>
           </h2>
           <p className="mt-6 text-sm md:text-base font-mono leading-relaxed opacity-70 max-w-xl">
-            Due progetti fieristici chiave con layout, materiali grafici e strumenti di comunicazione dedicati.
-            Apri ogni scheda per vedere dettagli, panoramiche fotografiche e scaricare gli asset.
+            Un elenco di lavori e progetti speciali che ho realizzato per clienti e aziende o come hobby, con focus su graphic design, developing e 3D rendering.
           </p>
         </div>
         <div className="border border-black/10 dark:border-white/20 rounded-2xl p-6 backdrop-blur">
@@ -172,8 +221,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
           <div className="mt-6 space-y-4">
             {[
               'Allestimenti fieristici e materiali stand',
-              'Coordinati stampa e comunicazione teaser',
-              'Toolkit digitali e download per il team',
+              'Generazione immagini e video 3D da Blender',
+              'Development di app e website',
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
@@ -182,7 +231,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
-            {['Fiera', 'Allestimento', 'Print', 'Digital', 'Asset'].map((tag) => (
+            {['Graphic Design', 'Developing', '3D Rendering'].map((tag) => (
               <span
                 key={tag}
                 className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full"
@@ -342,6 +391,16 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                       </div>
                     ))}
                   </div>
+                  {activeWork.siteUrl && (
+                    <a
+                      href={activeWork.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full text-xs font-mono uppercase tracking-[0.3em] px-4 py-3 rounded-full bg-primary text-black transition-transform active:scale-95 hover:opacity-90"
+                    >
+                      Vai al sito → dashb.hrz.me
+                    </a>
+                  )}
                   {activeWork.downloads?.map((download) => (
                     <a
                       key={download.label}
@@ -357,48 +416,50 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                 </div>
               </div>
 
-              <div className="mt-12">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-                    Panoramica
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={goToPrev}
-                      className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-                    >
-                      Prev
-                    </button>
-                    <button
-                      type="button"
-                      onClick={goToNext}
-                      className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-                    >
-                      Next
-                    </button>
+              {carouselMedia.length > 0 && (
+                <div className="mt-12">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
+                      Panoramica
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={goToPrev}
+                        className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                      >
+                        Prev
+                      </button>
+                      <button
+                        type="button"
+                        onClick={goToNext}
+                        className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5">
+                    {carouselMedia[carouselIndex].type === 'video' ? (
+                      <video
+                        src={carouselMedia[carouselIndex].src}
+                        controls
+                        className="w-full h-72 md:h-96 object-contain"
+                        muted
+                        loop
+                        autoPlay
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={carouselMedia[carouselIndex].src}
+                        alt=""
+                        className="w-full h-72 md:h-96 object-cover transition-all duration-300"
+                      />
+                    )}
                   </div>
                 </div>
-                <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5">
-                  {carouselMedia[carouselIndex].type === 'video' ? (
-                    <video
-                      src={carouselMedia[carouselIndex].src}
-                      controls
-                      className="w-full h-72 md:h-96 object-contain"
-                      muted
-                      loop
-                      autoPlay
-                      playsInline
-                    />
-                  ) : (
-                    <img
-                      src={carouselMedia[carouselIndex].src}
-                      alt=""
-                      className="w-full h-72 md:h-96 object-cover transition-all duration-300"
-                    />
-                  )}
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
