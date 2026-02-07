@@ -3,7 +3,7 @@ import { Asterisk } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <header className="flex justify-between items-start mb-24 md:mb-32 relative">
+    <header id="about" className="flex justify-between items-start mb-24 md:mb-32 relative">
       <div className="max-w-5xl relative z-10">
         <div className="absolute -left-12 -top-12 opacity-10 animate-float pointer-events-none hidden lg:block">
            {/* Abstract Geometric Decoration */}
@@ -15,15 +15,14 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] uppercase text-black dark:text-white">
-          <span className="block opacity-0 animate-enter-up">DECODING THE</span>
-          <span className="block opacity-0 animate-enter-up delay-100">SYNTAX OF</span>
+          <span className="block opacity-0 animate-enter-up">LUCA</span>
+          <span className="block opacity-0 animate-enter-up delay-100">RAGAZZINI</span>
           <div className="flex flex-wrap items-baseline gap-2 opacity-0 animate-enter-up delay-200">
-            <span className="font-mono text-4xl md:text-6xl lg:text-7xl align-baseline opacity-100 bg-black text-white dark:bg-white dark:text-black px-2">
-              MACHINES
+            <span className="font-mono text-3xl md:text-5xl lg:text-6xl align-baseline opacity-100 bg-black text-white dark:bg-white dark:text-black px-2">
+              IT & SOCIAL
             </span> 
-            <span>AND</span>
             <span className="font-serif italic font-normal lowercase tracking-normal text-primary flex items-center gap-2">
-              minds.
+              media manager
               <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow text-black dark:text-white opacity-50" />
             </span>
           </div>
@@ -31,8 +30,14 @@ const Hero: React.FC = () => {
         
         <div className="mt-8 font-mono text-xs font-bold tracking-widest uppercase opacity-0 animate-enter-up delay-300 flex items-center gap-4">
           <span className="w-8 h-[2px] bg-primary animate-pulse"></span>
-          <span>Luca Ragazzini: IT & Social Media Manager // Forlì, Italia</span>
+          <span>Forlì (FC), Italia // IT Manager · Digital & Automation Enthusiast</span>
         </div>
+
+        <p className="mt-8 text-lg md:text-xl leading-relaxed opacity-80 max-w-2xl font-serif italic border-l-2 border-black dark:border-white/20 pl-4">
+          Professionista trasversale con solido background IT e forte orientamento al digitale, alla comunicazione tecnica 
+          e all'ottimizzazione dei processi. Opero all'intersezione tra infrastruttura, sicurezza, marketing e automazione 
+          con approccio pratico, analitico e orientato al risultato.
+        </p>
       </div>
 
       <div className="hidden md:flex flex-col items-center gap-2 mt-4 opacity-0 animate-enter-up delay-500 animate-float-delayed">

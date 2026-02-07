@@ -7,37 +7,49 @@ interface ProjectSectionProps {
 
 const works = [
   {
-    id: "SC-300",
-    title: "Identity & Access Admin",
-    year: "CERTIFIED",
-    label: "MICROSOFT",
-    image: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-Entra-Suite-Final-Thumbnail-image?scl=1"
+    id: "M365",
+    title: "Microsoft 365 & Identity",
+    year: "SECURITY",
+    label: "IDENTITY",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "GA4",
-    title: "Website Efficiency",
-    year: "ANALYTICS",
-    label: "GOOGLE",
-    image: "https://blog.marketing-espresso.com/wp-content/uploads/2023/09/google-analytics-4.jpg"
+    id: "SEC",
+    title: "Incident Response & XDR",
+    year: "CYBER",
+    label: "DEFENSE",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "SYS",
-    title: "Server Infrastructure",
-    year: "DEPLOYED",
-    label: "ADMIN",
-    image: "https://img.corrierecomunicazioni.it/wp-content/uploads/2017/11/datacenter-130627170345.jpg"
+    id: "DR",
+    title: "Backup & DR Strategy",
+    year: "OPS",
+    label: "CONTINUITY",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "MKT",
+    title: "LinkedIn & Industrial Storytelling",
+    year: "BRAND",
+    label: "DIGITAL",
+    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActiveLabel }) => {
   return (
-    <section className="max-w-6xl mx-auto w-full mb-40">
+    <section id="portfolio" className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
         <span className="text-xs font-bold tracking-[0.2em] font-mono uppercase">
-          Certifications & Competencies
+          Aree di specializzazione
         </span>
         <span className="text-[10px] font-mono hidden md:block">SCROLL TO EXPLORE</span>
       </div>
+
+      <p className="text-sm md:text-base font-mono leading-relaxed opacity-70 max-w-3xl mb-10">
+        Sintesi delle aree operative principali: infrastrutture Microsoft, cybersecurity, continuità operativa e
+        comunicazione digitale industriale. I risultati numerici sono disponibili su richiesta.
+      </p>
 
       <div className="flex flex-col">
         {works.map((work) => (
