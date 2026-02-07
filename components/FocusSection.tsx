@@ -31,12 +31,12 @@ const education = [
   }
 ];
 
-const EducationSection: React.FC = () => {
+const FocusSection: React.FC = () => {
   return (
-    <section id="education" className="max-w-6xl mx-auto w-full mb-40">
+    <section id="focus" className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40">
         <span className="text-xs font-bold tracking-[0.2em] border-b border-black dark:border-white/20 pb-1 font-mono uppercase">
-          Lingue & Obiettivi
+          Focus
         </span>
       </div>
 
@@ -67,4 +67,4 @@ const EducationSection: React.FC = () => {
   );
 };
 
-export default EducationSection;
+export default FocusSection;
