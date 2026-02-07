@@ -2,12 +2,12 @@ import React from 'react';
 
 const Navigation: React.FC = () => {
   return (
-    <aside className="fixed right-0 inset-y-0 h-[100svh] w-16 sm:w-20 md:w-24 bg-black text-primary flex flex-col justify-between items-center px-2 pt-[calc(1.75rem+env(safe-area-inset-top))] pb-[calc(1.75rem+env(safe-area-inset-bottom))] pr-[calc(env(safe-area-inset-right)+0.5rem)] z-40 border-l border-white/10">
+    <aside className="fixed right-0 inset-y-0 h-[100svh] w-12 sm:w-14 md:w-16 bg-black text-primary flex flex-col justify-between items-center pt-[calc(1.5rem+env(safe-area-inset-top))] pb-[calc(1.5rem+env(safe-area-inset-bottom))] pr-[env(safe-area-inset-right)] z-40 border-l border-white/10">
       <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-black font-bold text-xs animate-pulse ring-2 ring-primary ring-offset-2 ring-offset-black">
         LR
       </div>
 
-      <nav className="flex flex-col gap-5 sm:gap-6 items-center flex-1 justify-center min-h-0 overflow-y-auto py-2">
+      <nav className="flex flex-col gap-6 sm:gap-8 items-center flex-1 justify-center min-h-0 overflow-y-auto py-2">
         {[
           { label: 'About', id: 'about' },
           { label: 'Profile', id: 'profile' },
