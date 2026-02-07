@@ -50,7 +50,7 @@ const workItems: WorkItem[] = [
       'Gerarchia tipografica leggibile anche a distanza.',
       'Formati modulari adattabili a diverse superfici espositive.',
     ],
-    tags: ['Grafica fiera', 'Print', 'Branding'],
+    tags: ['Grafica fiera', 'Tipografica', 'Branding'],
     heroImage: '/assets/work/host-milano/PIC/IMG_0068.jpeg',
     previewMedia: [
       { type: 'image', src: '/assets/work/host-milano/PIC/IMG_0091.jpeg' },
@@ -62,7 +62,7 @@ const workItems: WorkItem[] = [
       { type: 'image', src: '/assets/work/host-milano/PIC/IMG_0091.jpeg' },
       { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2431.jpeg' },
       { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2433.jpeg' },
-      { type: 'video', src: '/assets/work/host-milano/VID/Host-VideoLoop-DEF-4K.mov' },
+      { type: 'video', src: '/assets/work/host-milano/VID/Host-VideoLoop-DEF.mp4' },
       { type: 'video', src: '/assets/work/host-milano/VID/PascucciVideoLoop-DEF.mp4' },
     ],
     downloads: [
@@ -73,10 +73,10 @@ const workItems: WorkItem[] = [
   {
     id: 'ipack-ima-2025',
     title: 'IPACK-IMA Milano',
-    category: 'Packaging & processing',
+    category: 'Fiera Internazionale',
     period: 'Maggio 2025',
     location: 'Fiera Milano · Rho',
-    label: 'IPACK',
+    label: 'IPACK-IMA',
     shortDescription:
       'Allestimento e comunicazione integrata per la fiera del packaging: layout stand, cataloghi e social kit.',
     description:
