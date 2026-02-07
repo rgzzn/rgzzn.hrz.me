@@ -1,11 +1,39 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
+interface MediaItem {
+  type: 'image' | 'video';
+  src: string;
+  poster?: string;
+}
+
+interface DownloadItem {
+  label: string;
+  url: string;
+}
+
+interface WorkItem {
+  id: string;
+  title: string;
+  category: string;
+  period: string;
+  location: string;
+  label: string;
+  shortDescription: string;
+  description: string;
+  highlights: string[];
+  tags: string[];
+  heroImage: string; // Used for hover preview and main cover
+  previewMedia: MediaItem[];
+  carousel: MediaItem[];
+  downloads: DownloadItem[];
+}
+
 interface WorkSectionProps {
   setActiveImage: (img: string | null) => void;
   setActiveLabel: (label: string | null) => void;
 }
 
-const workItems = [
+const workItems: WorkItem[] = [
   {
     id: 'host-2023',
     title: 'HOST Milano',
@@ -23,18 +51,24 @@ const workItems = [
       'Formati modulari adattabili a diverse superfici espositive.',
     ],
     tags: ['Grafica fiera', 'Print', 'Branding'],
-    previewImages: [
-      'https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop',
+    heroImage: '/assets/work/host-milano/PIC/IMG_0068.jpeg',
+    previewMedia: [
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_0091.jpeg' },
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2431.jpeg' },
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2433.jpeg' },
     ],
-    heroImage: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop',
     carousel: [
-      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1400&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1400&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop',
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_0068.jpeg' },
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_0091.jpeg' },
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2431.jpeg' },
+      { type: 'image', src: '/assets/work/host-milano/PIC/IMG_2433.jpeg' },
+      { type: 'video', src: '/assets/work/host-milano/VID/Host-VideoLoop-DEF-4K.mov' },
+      { type: 'video', src: '/assets/work/host-milano/VID/PascucciVideoLoop-DEF.mp4' },
     ],
-    download: '/assets/host-2023-assets.zip',
+    downloads: [
+      { label: 'Coffee Packaging (PDF)', url: '/assets/work/host-milano/PDF/Coffee%20Packaging.pdf' },
+      { label: 'Packaging Caffè (PDF)', url: '/assets/work/host-milano/PDF/Packaging%20Caff%C3%A8.pdf' },
+    ],
   },
   {
     id: 'ipack-ima-2025',
@@ -53,25 +87,28 @@ const workItems = [
       'Supporti social pronti per la comunicazione live in fiera.',
     ],
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
-    previewImages: [
-      'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop',
-    ],
     heroImage: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop',
-    carousel: [
-      'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1400&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1400&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1400&auto=format&fit=crop',
+    previewMedia: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=800&auto=format&fit=crop' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop' },
     ],
-    download: '/assets/ipack-ima-2025-assets.zip',
+    carousel: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1400&auto=format&fit=crop' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1400&auto=format&fit=crop' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1400&auto=format&fit=crop' },
+    ],
+    downloads: [
+      { label: 'Download Assets', url: '/assets/ipack-ima-2025-assets.zip' },
+    ],
   },
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel }) => {
-  const [activeWork, setActiveWork] = useState<(typeof workItems)[number] | null>(null);
+  const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const carouselImages = useMemo(
+  
+  const carouselMedia = useMemo(
     () => (activeWork ? activeWork.carousel : []),
     [activeWork]
   );
@@ -93,18 +130,19 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
   }, []);
 
   const goToNext = () => {
-    setCarouselIndex((prev) => (prev + 1) % carouselImages.length);
+    setCarouselIndex((prev) => (prev + 1) % carouselMedia.length);
   };
 
   const goToPrev = () => {
-    setCarouselIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+    setCarouselIndex((prev) => (prev - 1 + carouselMedia.length) % carouselMedia.length);
   };
 
-  const handleOpen = (item: (typeof workItems)[number]) => {
+  const handleOpen = (item: WorkItem) => {
     setActiveWork(item);
     setActiveImage(item.heroImage);
     setActiveLabel(item.label);
   };
+  
   return (
     <section id="work" className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
@@ -210,12 +248,16 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
               </div>
 
               <div className="grid grid-cols-3 gap-3">
-                {item.previewImages.map((image) => (
+                {item.previewMedia.map((media, index) => (
                   <div
-                    key={image}
+                    key={index}
                     className="h-24 rounded-2xl border border-black/10 dark:border-white/20 overflow-hidden"
                   >
-                    <img src={image} alt="" className="h-full w-full object-cover" />
+                    {media.type === 'video' ? (
+                       <video src={media.src} className="h-full w-full object-cover" muted loop playsInline />
+                    ) : ( 
+                       <img src={media.src} alt="" className="h-full w-full object-cover" />
+                    )}
                   </div>
                 ))}
               </div>
@@ -232,102 +274,12 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       </div>
 
       {activeWork && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 bg-black/60">
-          <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white text-black dark:bg-black dark:text-white border border-black/20 dark:border-white/20 p-8 md:p-12">
-            <button
-              type="button"
-              onClick={() => setActiveWork(null)}
-              className="absolute top-6 right-6 text-xs font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full"
-            >
-              Chiudi
-            </button>
-
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary">
-                  {activeWork.period}
-                </span>
-                <h3 className="mt-4 text-3xl md:text-4xl font-bold uppercase tracking-tight">
-                  {activeWork.title}
-                </h3>
-                <p className="mt-2 text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-                  {activeWork.location}
-                </p>
-                <p className="mt-6 text-sm md:text-base font-mono leading-relaxed opacity-80">
-                  {activeWork.description}
-                </p>
-                <ul className="mt-6 space-y-3 text-sm font-mono opacity-70">
-                  {activeWork.highlights.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-primary font-bold">▸</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {activeWork.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20">
-                  <img src={activeWork.heroImage} alt="" className="w-full h-60 object-cover" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {activeWork.previewImages.map((image) => (
-                    <div
-                      key={image}
-                      className="h-28 rounded-2xl overflow-hidden border border-black/10 dark:border-white/20"
-                    >
-                      <img src={image} alt="" className="h-full w-full object-cover" />
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href={activeWork.download}
-                  download
-                  className="inline-flex items-center justify-center w-full text-xs font-mono uppercase tracking-[0.3em] px-4 py-3 rounded-full bg-primary text-black"
-                >
-                  Download asset
-                </a>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-                  Panoramica foto
-                </span>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={goToPrev}
-                    className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full"
-                  >
-                    Prev
-                  </button>
-                  <button
-                    type="button"
-                    onClick={goToNext}
-                    className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-              <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20">
-                <img
-                  src={carouselImages[carouselIndex]}
-                  alt=""
-                  className="w-full h-72 md:h-96 object-cover transition-all duration-300"
-                />
+                  <img
+                    src={carouselMedia[carouselIndex].src}
+                    alt=""
+                    className="w-full h-72 md:h-96 object-cover transition-all duration-300"
+                  />
+                )}
               </div>
             </div>
           </div>
