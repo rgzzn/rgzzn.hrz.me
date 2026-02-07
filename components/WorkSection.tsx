@@ -274,7 +274,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       </div>
 
       {activeWork && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] flex flex-col rounded-3xl bg-white text-black dark:bg-black dark:text-white border border-black/20 dark:border-white/20 shadow-2xl overflow-hidden">
             <div className="absolute top-4 right-4 z-50">
               <button
