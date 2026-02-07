@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
           <a
             key={item.id}
             href={`#${item.id}`}
-            className="writing-vertical-rl rotate-180 text-xs md:text-sm font-bold tracking-widest uppercase relative opacity-0 animate-enter-up"
+            className="writing-vertical-rl rotate-180 text-[11px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-center w-full leading-none opacity-0 animate-enter-up"
             style={{ animationDelay: `${500 + (index * 100)}ms` }}
           >
             {item.label}
