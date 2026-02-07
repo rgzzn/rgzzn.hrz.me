@@ -10,7 +10,6 @@ const Navigation: React.FC = () => {
       <nav className="flex flex-col gap-5 sm:gap-6 md:gap-8 items-center flex-1 justify-center w-full min-h-0 overflow-y-auto no-scrollbar py-8">
         {[
           { label: "About", id: "about" },
-          { label: "Profile", id: "profile" },
           { label: "Skills", id: "skills" },
           { label: "Experience", id: "experience" },
           { label: "Focus", id: "focus" },

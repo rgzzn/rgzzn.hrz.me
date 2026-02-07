@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import SkillSection from './components/SkillSection';
-import MatrixSection from './components/MatrixSection';
 import TimelineSection from './components/TimelineSection';
 import FocusSection from './components/FocusSection';
 import ProjectSection from './components/ProjectSection';
@@ -41,8 +40,6 @@ const App: React.FC = () => {
         <main className="flex-1 flex flex-col relative z-10 pl-6 pr-[calc(5rem+env(safe-area-inset-right))] md:pl-20 md:pr-[calc(7rem+env(safe-area-inset-right))] pt-12 pb-12">
           
           <Hero />
-          
-          <MatrixSection />
           
           <div className="opacity-0 animate-enter-up delay-300">
             <SkillSection 
