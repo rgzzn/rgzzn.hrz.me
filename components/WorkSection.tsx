@@ -274,12 +274,125 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       </div>
 
       {activeWork && (
-                  <img
-                    src={carouselMedia[carouselIndex].src}
-                    alt=""
-                    className="w-full h-72 md:h-96 object-cover transition-all duration-300"
-                  />
-                )}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] flex flex-col rounded-3xl bg-white text-black dark:bg-black dark:text-white border border-black/20 dark:border-white/20 shadow-2xl overflow-hidden">
+            <div className="absolute top-4 right-4 z-50">
+              <button
+                type="button"
+                onClick={() => setActiveWork(null)}
+                className="text-xs font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors shadow-lg"
+              >
+                Chiudi
+              </button>
+            </div>
+
+            <div className="overflow-y-auto p-6 md:p-12 pt-16 md:pt-12 scroll-smooth">
+              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary">
+                    {activeWork.period}
+                  </span>
+                  <h3 className="mt-4 text-3xl md:text-4xl font-bold uppercase tracking-tight">
+                    {activeWork.title}
+                  </h3>
+                  <p className="mt-2 text-xs font-mono uppercase tracking-[0.2em] opacity-60">
+                    {activeWork.location}
+                  </p>
+                  <p className="mt-6 text-sm md:text-base font-mono leading-relaxed opacity-80">
+                    {activeWork.description}
+                  </p>
+                  <ul className="mt-6 space-y-3 text-sm font-mono opacity-70">
+                    {activeWork.highlights.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="text-primary font-bold">▸</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 flex flex-wrap gap-2">
+                    {activeWork.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20">
+                    <img src={activeWork.heroImage} alt="" className="w-full h-60 object-cover" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {activeWork.previewMedia?.slice(0, 2).map((media, index) => (
+                      <div
+                        key={index}
+                        className="h-28 rounded-2xl overflow-hidden border border-black/10 dark:border-white/20"
+                      >
+                        {media.type === 'video' ? (
+                          <video src={media.src} className="h-full w-full object-cover" muted loop playsInline />
+                        ) : (
+                          <img src={media.src} alt="" className="h-full w-full object-cover" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  {activeWork.downloads?.map((download) => (
+                    <a
+                      key={download.label}
+                      href={download.url}
+                      download
+                      className="inline-flex items-center justify-center w-full text-xs font-mono uppercase tracking-[0.3em] px-4 py-3 rounded-full bg-primary text-black transition-transform active:scale-95 hover:opacity-90"
+                    >
+                      Download: {download.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
+                    Panoramica
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={goToPrev}
+                      className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                    >
+                      Prev
+                    </button>
+                    <button
+                      type="button"
+                      onClick={goToNext}
+                      className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+                <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5">
+                  {carouselMedia[carouselIndex].type === 'video' ? (
+                    <video
+                      src={carouselMedia[carouselIndex].src}
+                      controls
+                      className="w-full h-72 md:h-96 object-contain"
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={carouselMedia[carouselIndex].src}
+                      alt=""
+                      className="w-full h-72 md:h-96 object-cover transition-all duration-300"
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
