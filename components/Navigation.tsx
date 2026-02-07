@@ -7,15 +7,23 @@ const Navigation: React.FC = () => {
         LR
       </div>
 
-      <nav className="flex flex-col gap-12 items-center flex-1 justify-center">
-        {['Contact', 'About', 'Work'].map((item, index) => (
+      <nav className="flex flex-col gap-10 items-center flex-1 justify-center">
+        {[
+          { label: 'About', id: 'about' },
+          { label: 'Profile', id: 'profile' },
+          { label: 'Skills', id: 'skills' },
+          { label: 'Experience', id: 'experience' },
+          { label: 'Education', id: 'education' },
+          { label: 'Portfolio', id: 'portfolio' },
+          { label: 'Contact', id: 'contact' }
+        ].map((item, index) => (
           <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
+            key={item.id}
+            href={`#${item.id}`}
             className="writing-vertical-rl rotate-180 text-xs md:text-sm font-bold tracking-widest uppercase relative opacity-0 animate-enter-up"
             style={{ animationDelay: `${500 + (index * 100)}ms` }}
           >
-            {item}
+            {item.label}
           </a>
         ))}
       </nav>
