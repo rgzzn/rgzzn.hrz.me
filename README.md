@@ -1,4 +1,4 @@
-# RG Portfolio
+# LR Portfolio
 
 Portfolio personale realizzato con **React** e **Vite** per presentare il profilo professionale di Luca Ragazzini (IT & Social Media Manager).
 
