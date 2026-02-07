@@ -55,7 +55,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActi
         {works.map((work) => (
           <div
             key={work.id}
-            className="relative border-b border-black/20 dark:border-white/20 py-10 cursor-none"
+            className="relative border-b border-black/20 dark:border-white/20 py-10 cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
             onMouseEnter={() => {
               setActiveImage(work.image);
               setActiveLabel(work.label);
@@ -64,6 +64,15 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ setActiveImage, setActi
               setActiveImage(null);
               setActiveLabel(null);
             }}
+            onFocus={() => {
+              setActiveImage(work.image);
+              setActiveLabel(work.label);
+            }}
+            onBlur={() => {
+              setActiveImage(null);
+              setActiveLabel(null);
+            }}
+            tabIndex={0}
           >
             <div className="flex items-baseline gap-6 md:gap-12 relative z-20 pointer-events-none">
               <span className="font-mono text-xl md:text-2xl opacity-60">
