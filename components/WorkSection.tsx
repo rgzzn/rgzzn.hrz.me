@@ -92,17 +92,17 @@ const workItems: WorkItem[] = [
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
     heroImage: withBase('media/work/ipack-ima/images/ipack-hero.jpeg'),
     previewMedia: [
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3203.jpeg') },
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3238.jpeg') },
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3207.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
     ],
     carousel: [
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3203.jpeg') },
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3238.jpeg') },
-      { type: 'image', src: withBase('assets/work/ipack-ima/PIC/IMG_3207.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
     ],
     downloads: [
-      { label: 'Packaging Catalogue (ZIP)', url: withBase('assets/work/ipack-ima/PDF/packaging_catalogue.zip') },
+      { label: 'Catalogo IPACK-IMA (ZIP)', url: withBase('media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip') },
     ],
   },
 ];
