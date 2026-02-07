@@ -66,8 +66,8 @@ const workItems: WorkItem[] = [
       { type: 'video', src: '/assets/work/host-milano/VID/PascucciVideoLoop-DEF.mp4' },
     ],
     downloads: [
-      { label: 'Coffee Packaging (PDF)', url: '/assets/work/host-milano/PDF/Coffee%20Packaging.pdf' },
-      { label: 'Packaging Caffè (PDF)', url: '/assets/work/host-milano/PDF/Packaging%20Caff%C3%A8.pdf' },
+      { label: 'Coffee Packaging (PDF)', url: '/assets/work/host-milano/PDF/Coffee-Packaging.pdf' },
+      { label: 'Packaging Caffè (PDF)', url: '/assets/work/host-milano/PDF/Packaging-Caffe.pdf' },
     ],
   },
   {
