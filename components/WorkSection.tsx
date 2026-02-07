@@ -33,6 +33,9 @@ interface WorkSectionProps {
   setActiveLabel: (label: string | null) => void;
 }
 
+const assetBase = import.meta.env.BASE_URL ?? '/';
+const withBase = (path: string) => `${assetBase}${path.replace(/^\//, '')}`;
+
 const workItems: WorkItem[] = [
   {
     id: 'host-2023',
@@ -51,23 +54,23 @@ const workItems: WorkItem[] = [
       'Formati modulari adattabili a diverse superfici espositive.',
     ],
     tags: ['Grafica fiera', 'Tipografica', 'Branding'],
-    heroImage: '/media/work/host-milano/images/host-hero.jpeg',
+    heroImage: withBase('media/work/host-milano/images/host-hero.jpeg'),
     previewMedia: [
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-01.jpeg') },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-02.jpeg') },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-03.jpeg') },
     ],
     carousel: [
-      { type: 'image', src: '/media/work/host-milano/images/host-hero.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
-      { type: 'video', src: '/media/work/host-milano/videos/host-loop.mp4' },
-      { type: 'video', src: '/media/work/host-milano/videos/pascucci-loop.mp4' },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-hero.jpeg') },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-01.jpeg') },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-02.jpeg') },
+      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-03.jpeg') },
+      { type: 'video', src: withBase('media/work/host-milano/videos/host-loop.mp4') },
+      { type: 'video', src: withBase('media/work/host-milano/videos/pascucci-loop.mp4') },
     ],
     downloads: [
-      { label: 'Coffee Packaging (PDF)', url: '/media/work/host-milano/pdfs/coffee-packaging.pdf' },
-      { label: 'Packaging Caffè (PDF)', url: '/media/work/host-milano/pdfs/packaging-caffe.pdf' },
+      { label: 'Coffee Packaging (PDF)', url: withBase('media/work/host-milano/pdfs/coffee-packaging.pdf') },
+      { label: 'Packaging Caffè (PDF)', url: withBase('media/work/host-milano/pdfs/packaging-caffe.pdf') },
     ],
   },
   {
@@ -87,21 +90,21 @@ const workItems: WorkItem[] = [
       'Supporti social pronti per la comunicazione live in fiera.',
     ],
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
-    heroImage: '/media/work/ipack-ima/images/ipack-hero.jpeg',
+    heroImage: withBase('media/work/ipack-ima/images/ipack-hero.jpeg'),
     previewMedia: [
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-hero.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-social.png' },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-hero.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-stand-01.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-social.png') },
     ],
     carousel: [
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-hero.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/ipack-social.png' },
-      { type: 'video', src: '/media/work/ipack-ima/videos/ipack-loop.mp4' },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-hero.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-stand-01.jpeg') },
+      { type: 'image', src: withBase('media/work/ipack-ima/images/ipack-social.png') },
+      { type: 'video', src: withBase('media/work/ipack-ima/videos/ipack-loop.mp4') },
     ],
     downloads: [
-      { label: 'Packaging Catalogue (PDF) english', url: '/media/work/ipack-ima/pdfs/packaging-catalogue-en.pdf' },
-      { label: 'Packaging Catalogue (PDF) italian', url: '/media/work/ipack-ima/pdfs/packaging-catalogue-it.pdf' },
+      { label: 'Packaging Catalogue (PDF) english', url: withBase('media/work/ipack-ima/pdfs/packaging-catalogue-en.pdf') },
+      { label: 'Packaging Catalogue (PDF) italian', url: withBase('media/work/ipack-ima/pdfs/packaging-catalogue-it.pdf') },
     ],
   },
 ];
