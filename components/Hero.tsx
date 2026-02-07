@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] uppercase text-black dark:text-white">
           <span className="block opacity-0 animate-enter-up">LUCA</span>
           <span className="block opacity-0 animate-enter-up delay-100">RAGAZZINI</span>
-          <div className="flex flex-wrap items-baseline gap-2 opacity-0 animate-enter-up delay-200">
+          <span className="flex flex-wrap items-baseline gap-2 opacity-0 animate-enter-up delay-200">
             <span className="font-mono text-3xl md:text-5xl lg:text-6xl align-baseline opacity-100 bg-black text-white dark:bg-white dark:text-black px-2">
               IT & SOCIAL
             </span> 
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               media manager
               <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow text-black dark:text-white opacity-50" />
             </span>
-          </div>
+          </span>
         </h1>
         
         <div className="mt-8 font-mono text-xs font-bold tracking-widest uppercase opacity-0 animate-enter-up delay-300 flex items-center gap-4">

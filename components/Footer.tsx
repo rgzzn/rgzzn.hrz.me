@@ -36,13 +36,13 @@ const Footer: React.FC = () => {
           "Architettura digitale, governance IT e narrazione umana."
         </div>
         <div className="flex gap-4 md:justify-end">
-          <a href="#" className="p-3 border border-black dark:border-white/20 rounded-full">
+          <a href="#about" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai all'introduzione">
             <Terminal size={20} />
           </a>
-          <a href="#" className="p-3 border border-black dark:border-white/20 rounded-full">
+          <a href="#portfolio" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai al portfolio">
             <Palette size={20} />
           </a>
-          <a href="https://www.linkedin.com/in/rgzzn/" className="p-3 border border-black dark:border-white/20 rounded-full">
+          <a href="https://www.linkedin.com/in/rgzzn/" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Apri LinkedIn di Luca">
             <AtSign size={20} />
           </a>
         </div>
