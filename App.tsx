@@ -5,6 +5,7 @@ import SkillSection from './components/SkillSection';
 import TimelineSection from './components/TimelineSection';
 import FocusSection from './components/FocusSection';
 import ProjectSection from './components/ProjectSection';
+import WorkSection from './components/WorkSection';
 import Footer from './components/Footer';
 import MouseFollower from './components/MouseFollower';
 
@@ -51,6 +52,11 @@ const App: React.FC = () => {
           <TimelineSection />
 
           <FocusSection />
+
+          <WorkSection 
+            setActiveImage={setActiveImage} 
+            setActiveLabel={setActiveLabel} 
+          />
           
           <ProjectSection 
             setActiveImage={setActiveImage} 
