@@ -42,8 +42,17 @@
               scan: "scan 4s linear infinite",
               "grow-h": "grow-h 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               "pulse-soft": "pulse-soft 2s infinite",
+              "ring-pulse": "ring-pulse 2s ease-in-out infinite",
             },
             keyframes: {
+              "ring-pulse": {
+                "0%, 100%": {
+                  boxShadow: "0 0 0 2px rgba(168, 85, 247, 0.6)",
+                },
+                "50%": {
+                  boxShadow: "0 0 0 6px rgba(168, 85, 247, 0.2)",
+                },
+              },
               "pulse-soft": {
                 "0%, 100%": {
                   transform: "scale(1)",
