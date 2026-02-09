@@ -55,4 +55,4 @@ npm run preview
 
 ---
 
-**RG Portfolio** — Luca Ragazzini ©2026
+**LR Portfolio** — Luca Ragazzini ©2026
