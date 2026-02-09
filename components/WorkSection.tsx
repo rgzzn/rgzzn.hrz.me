@@ -163,7 +163,7 @@ const workItems: WorkItem[] = [
       { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
     ],
     carousel: [
-      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/DashB-BACK.jpeg') },
       { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-1.png') },
       { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-2.png') },
       { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
