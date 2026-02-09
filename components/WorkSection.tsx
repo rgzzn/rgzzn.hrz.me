@@ -113,8 +113,8 @@ const workItems: WorkItem[] = [
     period: 'Gennaio 2026',
     location: 'Forlì · Forlì-Cesena',
     label: 'DashB',
-    shortDescription: 'Dashboard in stile bento per iPad, Mac e Apple TV: meteo, calendario e notizie in un’unica vista immersiva.',
-    description: 'DashB è una dashboard moderna in stile bento pensata per trasformare uno schermo (iPad, Mac o Apple TV) in un centro di controllo elegante. Meteo con WeatherKit, agenda da Google Calendar e Outlook, ticker notizie da feed RSS con immagini e QR code. Progettata con SwiftUI, design TV-friendly con componenti grandi, contrasto elevato e animazioni morbide.',
+    shortDescription: 'Dashboard in stile bento per Apple TV: meteo, calendario e notizie in un’unica vista immersiva.',
+    description: 'DashB è una dashboard moderna in stile bento pensata per trasformare uno schermo Apple TV in un centro di controllo elegante. Meteo con WeatherKit, agenda da Google Calendar e Outlook, ticker notizie da feed RSS con immagini e QR code. Progettata con SwiftUI, design TV-friendly con componenti grandi, contrasto elevato e animazioni morbide.',
     highlights: [
       'Meteo intelligente con WeatherKit e aggiornamento automatico',
       'Agenda giornaliera con eventi da Google Calendar e Microsoft Outlook',
@@ -123,9 +123,20 @@ const workItems: WorkItem[] = [
       'SwiftUI, OAuth Device Flow, Keychain per token sicuri',
     ],
     tags: ['SwiftUI', 'tvOS', 'WeatherKit', 'Calendar', 'RSS', 'Dashboard'],
-    heroImage: withBase('media/work/dashb/images/dashb-hero.jpeg'),
-    previewMedia: [],
-    carousel: [],
+    // Il logo è l’elemento principale per la card e il dettaglio
+    heroImage: withBase('media/work/dashb/images/DashB-BACK.png'),
+    // Preview a griglia nella card: focus sulle schermate principali della app
+    previewMedia: [
+      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
+      { type: 'image', src: withBase('media/work/dashb/images/dashb-1.jpeg') },
+      { type: 'image', src: withBase('media/work/dashb/images/dashb-2.jpeg') },
+    ],
+    // Carosello completo nel dettaglio progetto: logo + tutte le varianti di schermata
+    carousel: [
+      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
+      { type: 'image', src: withBase('media/work/dashb/images/dashb-1.jpeg') },
+      { type: 'image', src: withBase('media/work/dashb/images/dashb-2.jpeg') },
+    ],
     downloads: [],
     siteUrl: 'https://dashb.hrz.me',
   },
@@ -136,8 +147,8 @@ const workItems: WorkItem[] = [
     period: 'Gennaio 2026',
     location: 'Forlì · Forlì-Cesena',
     label: 'DashB',
-    shortDescription: 'Clone della dashboard Apple TV+ realizzato con React, Vite e Tailwind CSS: design responsive e componenti riutilizzabili.',
-    description: 'Progetto web che replica l’esperienza della dashboard Apple TV+: interfaccia moderna e responsive, architettura a componenti React, styling con Tailwind CSS e tooling Vite per sviluppo veloce. Adatto a tutti i dispositivi.',
+    shortDescription: 'Sito della dashboard Apple TV+ realizzato con React, Vite e Tailwind CSS: design responsive e componenti riutilizzabili.',
+    description: 'Sito web dedicato all’applicazione DashB: illustra le funzionalità della dashboard Apple TV+ con una presentazione moderna, interfaccia responsive, componenti React riutilizzabili e styling con Tailwind CSS. Sviluppo rapido grazie a Vite, perfetto su ogni dispositivo.',
     highlights: [
       'Design responsive ottimizzato per ogni schermo',
       'Architettura a componenti React riutilizzabili',
@@ -145,10 +156,17 @@ const workItems: WorkItem[] = [
       'Build e dev server con Vite',
     ],
     tags: ['React', 'Vite', 'Tailwind CSS', 'TypeScript', 'Dashboard'],
-    heroImage: withBase('media/work/dashb/images/dashb-hero.jpeg'),
-    previewMedia: [],
+    heroImage: withBase('media/work/dashb-site/images/dashb-site-1.png'),
+    previewMedia: [
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-1.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-2.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
+    ],
     carousel: [
-      { type: 'image', src: withBase('media/work/dashb/images/dashb-hero.jpeg') },
+      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-1.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-2.png') },
+      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
     ],
     downloads: [],
     siteUrl: 'https://dashb.hrz.me',
@@ -378,7 +396,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                     <img src={activeWork.heroImage} alt="" className="w-full h-60 object-cover" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    {activeWork.previewMedia?.slice(0, 2).map((media, index) => (
+                    {(activeWork.previewMedia ?? []).slice(0, 2).map((media, index) => (
                       <div
                         key={index}
                         className="h-28 rounded-2xl overflow-hidden border border-black/10 dark:border-white/20"
