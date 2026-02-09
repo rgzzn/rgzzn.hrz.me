@@ -34,8 +34,8 @@ interface WorkSectionProps {
   setActiveLabel: (label: string | null) => void;
 }
 
-const assetBase = import.meta.env.BASE_URL ?? '/';
-const withBase = (path: string) => `${assetBase}${path.replace(/^\//, '')}`;
+// Usa percorsi assoluti che iniziano con / per le risorse nella cartella public
+// Questo funziona sia in sviluppo che in produzione
 
 const workItems: WorkItem[] = [
   {
@@ -55,23 +55,23 @@ const workItems: WorkItem[] = [
       'Formati modulari adattabili a diverse superfici espositive.',
     ],
     tags: ['Grafica fiera', 'Tipografica', 'Branding'],
-    heroImage: withBase('media/work/host-milano/images/host-hero.jpeg'),
+    heroImage: '/media/work/host-milano/images/host-hero.jpeg',
     previewMedia: [
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-01.jpeg') },
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-02.jpeg') },
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-03.jpeg') },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
     ],
     carousel: [
-      { type: 'image', src: withBase('media/work/host-milano/images/host-hero.jpeg') },
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-01.jpeg') },
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-02.jpeg') },
-      { type: 'image', src: withBase('media/work/host-milano/images/host-stand-03.jpeg') },
-      { type: 'video', src: withBase('media/work/host-milano/videos/host-loop.mp4') },
-      { type: 'video', src: withBase('media/work/host-milano/videos/pascucci-loop.mp4') },
+      { type: 'image', src: '/media/work/host-milano/images/host-hero.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
+      { type: 'video', src: '/media/work/host-milano/videos/host-loop.mp4' },
+      { type: 'video', src: '/media/work/host-milano/videos/pascucci-loop.mp4' },
     ],
     downloads: [
-      { label: 'Coffee Packaging (PDF)', url: withBase('media/work/host-milano/pdfs/coffee-packaging.pdf') },
-      { label: 'Packaging Caffè (PDF)', url: withBase('media/work/host-milano/pdfs/packaging-caffe.pdf') },
+      { label: 'Coffee Packaging (PDF)', url: '/media/work/host-milano/pdfs/coffee-packaging.pdf' },
+      { label: 'Packaging Caffè (PDF)', url: '/media/work/host-milano/pdfs/packaging-caffe.pdf' },
     ],
   },
   {
@@ -91,19 +91,19 @@ const workItems: WorkItem[] = [
       'Supporti social pronti per la comunicazione live in fiera.',
     ],
     tags: ['Allestimento', 'Cataloghi', 'Social kit'],
-    heroImage: withBase('media/work/ipack-ima/images/ipack-hero.jpeg'),
+    heroImage: '/media/work/ipack-ima/images/ipack-hero.jpeg',
     previewMedia: [
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
     ],
     carousel: [
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3203.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3238.jpeg') },
-      { type: 'image', src: withBase('media/work/ipack-ima/images/IMG_3207.jpeg') },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
     ],
     downloads: [
-      { label: 'Catalogo IPACK-IMA (ZIP)', url: withBase('media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip') },
+      { label: 'Catalogo IPACK-IMA (ZIP)', url: '/media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip' },
     ],
   },
   {
@@ -124,18 +124,18 @@ const workItems: WorkItem[] = [
     ],
     tags: ['SwiftUI', 'tvOS', 'WeatherKit', 'Calendar', 'RSS', 'Dashboard'],
     // Il logo è l’elemento principale per la card e il dettaglio
-    heroImage: withBase('media/work/dashb/images/DashB-BACK.png'),
+    heroImage: '/media/work/dashb/images/DashB-BACK.png',
     // Preview a griglia nella card: focus sulle schermate principali della app
     previewMedia: [
-      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
-      { type: 'image', src: withBase('media/work/dashb/images/dashb-1.jpeg') },
-      { type: 'image', src: withBase('media/work/dashb/images/dashb-2.jpeg') },
+      { type: 'image', src: '/media/work/dashb/images/DashB-BACK.png' },
+      { type: 'image', src: '/media/work/dashb/images/dashb-1.jpeg' },
+      { type: 'image', src: '/media/work/dashb/images/dashb-2.jpeg' },
     ],
     // Carosello completo nel dettaglio progetto: logo + tutte le varianti di schermata
     carousel: [
-      { type: 'image', src: withBase('media/work/dashb/images/DashB-BACK.png') },
-      { type: 'image', src: withBase('media/work/dashb/images/dashb-1.jpeg') },
-      { type: 'image', src: withBase('media/work/dashb/images/dashb-2.jpeg') },
+      { type: 'image', src: '/media/work/dashb/images/DashB-BACK.png' },
+      { type: 'image', src: '/media/work/dashb/images/dashb-1.jpeg' },
+      { type: 'image', src: '/media/work/dashb/images/dashb-2.jpeg' },
     ],
     downloads: [],
     siteUrl: 'https://dashb.hrz.me',
@@ -156,17 +156,17 @@ const workItems: WorkItem[] = [
       'Build e dev server con Vite',
     ],
     tags: ['React', 'Vite', 'Tailwind CSS', 'TypeScript', 'Dashboard'],
-    heroImage: withBase('media/work/dashb-site/images/dashb-site-1.png'),
+    heroImage: '/media/work/dashb-site/images/dashb-site-1.png',
     previewMedia: [
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-1.png') },
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-2.png') },
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-1.png' },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-2.png' },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-3.png' },
     ],
     carousel: [
-      { type: 'image', src: withBase('media/work/dashb-site/images/DashB-BACK.jpeg') },
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-1.png') },
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-2.png') },
-      { type: 'image', src: withBase('media/work/dashb-site/images/dashb-site-3.png') },
+      { type: 'image', src: '/media/work/dashb-site/images/DashB-BACK.jpeg' },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-1.png' },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-2.png' },
+      { type: 'image', src: '/media/work/dashb-site/images/dashb-site-3.png' },
     ],
     downloads: [],
     siteUrl: 'https://dashb.hrz.me',
