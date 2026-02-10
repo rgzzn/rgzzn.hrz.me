@@ -1,4 +1,5 @@
 import React from 'react';
+import { toAssetPath } from '../utils/assetPath';
 
 interface SkillSectionProps {
   setActiveImage: (img: string | null) => void;
@@ -74,7 +75,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
             key={index}
             className="relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
             onMouseEnter={() => {
-              setActiveImage(item.image);
+              setActiveImage(toAssetPath(item.image));
               setActiveLabel(item.label);
             }}
             onMouseLeave={() => {
@@ -82,7 +83,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
               setActiveLabel(null);
             }}
             onFocus={() => {
-              setActiveImage(item.image);
+              setActiveImage(toAssetPath(item.image));
               setActiveLabel(item.label);
             }}
             onBlur={() => {
