@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { toAssetPath } from '../utils/assetPath';
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -210,7 +211,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
 
   const handleOpen = (item: WorkItem) => {
     setActiveWork(item);
-    setActiveImage(item.heroImage);
+    setActiveImage(toAssetPath(item.heroImage));
     setActiveLabel(item.label);
   };
   
@@ -267,7 +268,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             key={item.title}
             className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5"
             onMouseEnter={() => {
-              setActiveImage(item.heroImage);
+              setActiveImage(toAssetPath(item.heroImage));
               setActiveLabel(item.label);
             }}
             onMouseLeave={() => {
@@ -275,7 +276,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
               setActiveLabel(null);
             }}
             onFocus={() => {
-              setActiveImage(item.heroImage);
+              setActiveImage(toAssetPath(item.heroImage));
               setActiveLabel(item.label);
             }}
             onBlur={() => {
@@ -324,9 +325,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                     className="h-24 rounded-2xl border border-black/10 dark:border-white/20 overflow-hidden"
                   >
                     {media.type === 'video' ? (
-                       <video src={media.src} className="h-full w-full object-cover" muted loop playsInline />
+                       <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
                     ) : ( 
-                       <img src={media.src} alt="" className="h-full w-full object-cover" />
+                       <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
                     )}
                   </div>
                 ))}
@@ -393,7 +394,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
 
                 <div className="space-y-4">
                   <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20">
-                    <img src={activeWork.heroImage} alt="" className="w-full h-60 object-cover" />
+                    <img src={toAssetPath(activeWork.heroImage)} alt="" className="w-full h-60 object-cover" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     {(activeWork.previewMedia ?? []).slice(0, 2).map((media, index) => (
@@ -402,9 +403,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                         className="h-28 rounded-2xl overflow-hidden border border-black/10 dark:border-white/20"
                       >
                         {media.type === 'video' ? (
-                          <video src={media.src} className="h-full w-full object-cover" muted loop playsInline />
+                          <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
                         ) : (
-                          <img src={media.src} alt="" className="h-full w-full object-cover" />
+                          <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
                         )}
                       </div>
                     ))}
@@ -422,7 +423,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                   {activeWork.downloads?.map((download) => (
                     <a
                       key={download.label}
-                      href={download.url}
+                      href={toAssetPath(download.url)}
                       download
                       target="_blank"
                       rel="noopener noreferrer"
@@ -460,7 +461,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                   <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5">
                     {carouselMedia[carouselIndex].type === 'video' ? (
                       <video
-                        src={carouselMedia[carouselIndex].src}
+                        src={toAssetPath(carouselMedia[carouselIndex].src)}
                         controls
                         className="w-full h-72 md:h-96 object-contain"
                         muted
@@ -470,7 +471,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                       />
                     ) : (
                       <img
-                        src={carouselMedia[carouselIndex].src}
+                        src={toAssetPath(carouselMedia[carouselIndex].src)}
                         alt=""
                         className="w-full h-72 md:h-96 object-cover transition-all duration-300"
                       />
