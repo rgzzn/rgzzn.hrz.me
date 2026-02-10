@@ -10,14 +10,14 @@ const items = [
     title: "Windows Server & Active Directory",
     category: "DNS / DHCP / GPO / Domain",
     label: "LOGIC",
-    image: "https://images.unsplash.com/photo-1558494949-ef526bca4852?q=80&w=800&auto=format&fit=crop",
+    image: "/media/hover/ad_server.png",
     font: "font-mono"
   },
   {
     title: "Microsoft 365 & Entra ID",
     category: "MFA / Conditional Access / Intune",
     label: "LOGIC",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+    image: "/media/hover/entra.png",
     font: "font-mono"
   },
   {
