@@ -41,74 +41,6 @@ interface WorkSectionProps {
 
 const workItems: WorkItem[] = [
   {
-    id: 'host-2023',
-    title: 'HOST Milano',
-    category: 'Fiera internazionale',
-    period: 'Ottobre 2023',
-    location: 'Fiera Milano · Rho',
-    label: 'HOST',
-    shortDescription:
-      'Concept grafico per materiali stand, inviti e comunicazione teaser dedicata alla linea coffee packaging.',
-    description:
-      'Per HOST Milano 2023 ho sviluppato una campagna coordinata che comprende locandine, pannelli stand, inviti digitali e supporti cartacei per la forza commerciale. Il concept valorizza il prodotto in primo piano con un visual ad alto impatto, mentre la tipografia mantiene un ritmo tecnico e ordinato per facilitare la lettura in fiera.',
-    highlights: [
-      'Palette calda e contrastata per richiamare il mondo coffee.',
-      'Gerarchia tipografica leggibile anche a distanza.',
-      'Formati modulari adattabili a diverse superfici espositive.',
-    ],
-    tags: ['Grafica fiera', 'Tipografica', 'Branding'],
-    heroImage: '/media/work/host-milano/images/host-hero.jpeg',
-    previewMedia: [
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
-    ],
-    carousel: [
-      { type: 'image', src: '/media/work/host-milano/images/host-hero.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
-      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
-      { type: 'video', src: '/media/work/host-milano/videos/host-loop.mp4' },
-      { type: 'video', src: '/media/work/host-milano/videos/pascucci-loop.mp4' },
-    ],
-    downloads: [
-      { label: 'Coffee Packaging (PDF)', url: '/media/work/host-milano/pdfs/coffee-packaging.pdf' },
-      { label: 'Packaging Caffè (PDF)', url: '/media/work/host-milano/pdfs/packaging-caffe.pdf' },
-    ],
-  },
-  {
-    id: 'ipack-ima-2025',
-    title: 'IPACK-IMA Milano',
-    category: 'Fiera Internazionale',
-    period: 'Maggio 2025',
-    location: 'Fiera Milano · Rho',
-    label: 'IPACK-IMA',
-    shortDescription:
-      'Allestimento e comunicazione integrata per la fiera del packaging: layout stand, cataloghi e social kit.',
-    description:
-      'Per IPACK-IMA 2025 ho realizzato una narrazione visiva completa per lo stand: layout modulari, schede tecniche, grafica digitale e materiale per il team commerciale. L’obiettivo era dare continuità al brand e accompagnare il visitatore in un percorso chiaro, informativo e coerente.',
-    highlights: [
-      'Sistema grafico coerente tra stampa e digitale.',
-      'Cataloghi e schede tecniche ottimizzati per la consultazione rapida.',
-      'Supporti social pronti per la comunicazione live in fiera.',
-    ],
-    tags: ['Allestimento', 'Cataloghi', 'Social kit'],
-    heroImage: '/media/work/ipack-ima/images/ipack-hero.jpeg',
-    previewMedia: [
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
-    ],
-    carousel: [
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
-      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
-    ],
-    downloads: [
-      { label: 'Catalogo IPACK-IMA (ZIP)', url: '/media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip' },
-    ],
-  },
-  {
     id: 'DashB',
     title: 'DashB App',
     category: 'TvOS App',
@@ -125,15 +57,12 @@ const workItems: WorkItem[] = [
       'SwiftUI, OAuth Device Flow, Keychain per token sicuri',
     ],
     tags: ['SwiftUI', 'tvOS', 'WeatherKit', 'Calendar', 'RSS', 'Dashboard'],
-    // Il logo è l’elemento principale per la card e il dettaglio
     heroImage: '/media/work/dashb/images/DashB-BACK.png',
-    // Preview a griglia nella card: focus sulle schermate principali della app
     previewMedia: [
       { type: 'image', src: '/media/work/dashb/images/DashB-BACK.png' },
       { type: 'image', src: '/media/work/dashb/images/dashb-1.jpeg' },
       { type: 'image', src: '/media/work/dashb/images/dashb-2.jpeg' },
     ],
-    // Carosello completo nel dettaglio progetto: logo + tutte le varianti di schermata
     carousel: [
       { type: 'image', src: '/media/work/dashb/images/DashB-BACK.png' },
       { type: 'image', src: '/media/work/dashb/images/dashb-1.jpeg' },
@@ -174,42 +103,110 @@ const workItems: WorkItem[] = [
     siteUrl: 'https://dashb.hrz.me',
   },
   {
-  id: 'Comega-Render',
-  title: 'Industrial Render Composition – Comega',
-  category: '3D Visualization',
-  period: 'Gennaio 2025',
-  location: 'Forlì, Forlì-Cesena',
-  label: 'Render',
-  shortDescription: 'Composizione e valorizzazione render tecnici per macchine industriali Comega.',
-  description: 'Attività di render composition e visual enhancement per macchine industriali Comega. Ottimizzazione di scene 3D fornite dal reparto tecnico, con interventi su camera setup, lighting, materiali e post-produzione per trasformare render ingegneristici in asset marketing ad alto impatto visivo, utilizzati in presentazioni commerciali, brochure e contenuti digital.',
-  highlights: [
-    'Ottimizzazione render tecnici forniti dal team progettazione Comega',
-    'Setup camera e inquadrature orientate alla comunicazione prodotto',
-    'Lighting design per enfatizzare volumi e componenti meccaniche',
-    'Post-produzione e color grading per utilizzo marketing',
-    'Animazioni di presentazione per contenuti digital e social'
-  ],
-  tags: ['Rendering', 'Lighting', '3D Composition', 'Industrial Visualization', 'Comega'],
-  heroImage: '/media/work/render/images/valcolatte.png',
-  previewMedia: [
-    { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
-    { type: 'image', src: '/media/work/render/images/sigma.png' },
-    { type: 'image', src: '/media/work/render/images/aries.png' }
-  ],
-  carousel: [
-    { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
-    { type: 'image', src: '/media/work/render/images/sigma.png' },
-    { type: 'image', src: '/media/work/render/images/aries.png' },
-    { type: 'image', src: '/media/work/render/images/valcolatte.png' },
-    { type: 'image', src: '/media/work/render/images/virgo.png' },
-    { type: 'image', src: '/media/work/render/images/virgo_1.png' },
-    { type: 'video', src: '/media/work/render/videos/delta.mp4'},
-    { type: 'video', src: '/media/work/render/videos/valcolatte.mp4'},
-    { type: 'video', src: '/media/work/render/videos/virgo_video.mp4'},
-  ],
-  downloads: [],
-  siteUrl: null
-},
+    id: 'ipack-ima-2025',
+    title: 'IPACK-IMA Milano',
+    category: 'Fiera Internazionale',
+    period: 'Maggio 2025',
+    location: 'Fiera Milano · Rho',
+    label: 'IPACK-IMA',
+    shortDescription:
+      'Allestimento e comunicazione integrata per la fiera del packaging: layout stand, cataloghi e social kit.',
+    description:
+      'Per IPACK-IMA 2025 ho realizzato una narrazione visiva completa per lo stand: layout modulari, schede tecniche, grafica digitale e materiale per il team commerciale. L’obiettivo era dare continuità al brand e accompagnare il visitatore in un percorso chiaro, informativo e coerente.',
+    highlights: [
+      'Sistema grafico coerente tra stampa e digitale.',
+      'Cataloghi e schede tecniche ottimizzati per la consultazione rapida.',
+      'Supporti social pronti per la comunicazione live in fiera.',
+    ],
+    tags: ['Allestimento', 'Cataloghi', 'Social kit'],
+    heroImage: '/media/work/ipack-ima/images/ipack-hero.jpeg',
+    previewMedia: [
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
+    ],
+    carousel: [
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3203.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3238.jpeg' },
+      { type: 'image', src: '/media/work/ipack-ima/images/IMG_3207.jpeg' },
+    ],
+    downloads: [
+      { label: 'Catalogo IPACK-IMA (ZIP)', url: '/media/work/ipack-ima/pdfs/IPACKIMA_CATALOGUE.zip' },
+    ],
+  },
+  {
+    id: 'Comega-Render',
+    title: 'Industrial Render Composition – Comega',
+    category: '3D Visualization',
+    period: 'Gennaio 2025',
+    location: 'Forlì · Forlì-Cesena',
+    label: 'Render',
+    shortDescription: 'Composizione e valorizzazione render tecnici per macchine industriali Comega.',
+    description: 'Attività di render composition e visual enhancement per macchine industriali Comega. Ottimizzazione di scene 3D fornite dal reparto tecnico, con interventi su camera setup, lighting, materiali e post-produzione per trasformare render ingegneristici in asset marketing ad alto impatto visivo, utilizzati in presentazioni commerciali, brochure e contenuti digital.',
+    highlights: [
+      'Ottimizzazione render tecnici forniti dal team progettazione Comega',
+      'Setup camera e inquadrature orientate alla comunicazione prodotto',
+      'Lighting design per enfatizzare volumi e componenti meccaniche',
+      'Post-produzione e color grading per utilizzo marketing',
+      'Animazioni di presentazione per contenuti digital e social'
+    ],
+    tags: ['Rendering', 'Lighting', '3D Composition', 'Industrial Visualization', 'Comega'],
+    heroImage: '/media/work/render/images/valcolatte.png',
+    previewMedia: [
+      { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
+      { type: 'image', src: '/media/work/render/images/sigma.png' },
+      { type: 'image', src: '/media/work/render/images/aries.png' }
+    ],
+    carousel: [
+      { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
+      { type: 'image', src: '/media/work/render/images/sigma.png' },
+      { type: 'image', src: '/media/work/render/images/aries.png' },
+      { type: 'image', src: '/media/work/render/images/valcolatte.png' },
+      { type: 'image', src: '/media/work/render/images/virgo.png' },
+      { type: 'image', src: '/media/work/render/images/virgo_1.png' },
+      { type: 'video', src: '/media/work/render/videos/delta.mp4'},
+      { type: 'video', src: '/media/work/render/videos/valcolatte.mp4'},
+      { type: 'video', src: '/media/work/render/videos/virgo_video.mp4'},
+    ],
+    downloads: [],
+    siteUrl: null
+  },
+  {
+    id: 'host-2023',
+    title: 'HOST Milano',
+    category: 'Fiera internazionale',
+    period: 'Ottobre 2023',
+    location: 'Fiera Milano · Rho',
+    label: 'HOST',
+    shortDescription:
+      'Concept grafico per materiali stand, inviti e comunicazione teaser dedicata alla linea coffee packaging.',
+    description:
+      'Per HOST Milano 2023 ho sviluppato una campagna coordinata che comprende locandine, pannelli stand, inviti digitali e supporti cartacei per la forza commerciale. Il concept valorizza il prodotto in primo piano con un visual ad alto impatto, mentre la tipografia mantiene un ritmo tecnico e ordinato per facilitare la lettura in fiera.',
+    highlights: [
+      'Palette calda e contrastata per richiamare il mondo coffee.',
+      'Gerarchia tipografica leggibile anche a distanza.',
+      'Formati modulari adattabili a diverse superfici espositive.',
+    ],
+    tags: ['Grafica fiera', 'Tipografica', 'Branding'],
+    heroImage: '/media/work/host-milano/images/host-hero.jpeg',
+    previewMedia: [
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
+    ],
+    carousel: [
+      { type: 'image', src: '/media/work/host-milano/images/host-hero.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-01.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-02.jpeg' },
+      { type: 'image', src: '/media/work/host-milano/images/host-stand-03.jpeg' },
+      { type: 'video', src: '/media/work/host-milano/videos/host-loop.mp4' },
+      { type: 'video', src: '/media/work/host-milano/videos/pascucci-loop.mp4' },
+    ],
+    downloads: [
+      { label: 'Coffee Packaging (PDF)', url: '/media/work/host-milano/pdfs/coffee-packaging.pdf' },
+      { label: 'Packaging Caffè (PDF)', url: '/media/work/host-milano/pdfs/packaging-caffe.pdf' },
+    ],
+  },
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
@@ -273,7 +270,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         <div className="border border-black/10 dark:border-white/20 rounded-2xl p-6 backdrop-blur">
           <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] opacity-60">
             <span>Focus</span>
-            <span>2023 · 2025</span>
+            <span>2023 · 2026</span>
           </div>
           <div className="mt-6 space-y-4">
             {[
@@ -303,8 +300,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       <div className="grid gap-6 md:grid-cols-2">
         {workItems.map((item) => (
           <article
-            key={item.title}
-            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5"
+            key={item.id}
+            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5 cursor-pointer"
             onMouseEnter={() => {
               if (isHoverable) {
                 setActiveImage(toAssetPath(item.heroImage));
@@ -333,57 +330,57 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             onClick={() => handleOpen(item)}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative z-10 flex flex-col gap-6">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full">
-                  {item.category}
-                </span>
-                <span className="text-xs font-mono opacity-60">{item.period}</span>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-xs font-mono uppercase tracking-[0.2em] text-primary">
-                  {item.location}
-                </p>
-                <p className="mt-3 text-sm md:text-base font-mono opacity-70 leading-relaxed">
-                  {item.shortDescription}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full"
-                  >
-                    {tag}
+            
+            <div className="relative z-10 flex flex-col h-full justify-between gap-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full">
+                    {item.category}
                   </span>
-                ))}
+                  <span className="text-xs font-mono opacity-60">{item.period}</span>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight leading-none">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[10px] font-mono uppercase tracking-[0.2em] text-primary">
+                    {item.location}
+                  </p>
+                  <p className="mt-4 text-sm md:text-base font-mono opacity-70 leading-relaxed line-clamp-3">
+                    {item.shortDescription}
+                  </p>
+                </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
-                {item.previewMedia.map((media, index) => (
-                  <div
-                    key={index}
-                    className="h-24 rounded-2xl border border-black/10 dark:border-white/20 overflow-hidden"
-                  >
-                    {media.type === 'video' ? (
-                       <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
-                    ) : ( 
-                       <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
-                    )}
+              <div className="space-y-6">
+                <div className="grid grid-cols-3 gap-3">
+                  {item.previewMedia.slice(0, 3).map((media, index) => (
+                    <div
+                      key={index}
+                      className="h-20 rounded-xl border border-black/10 dark:border-white/20 overflow-hidden bg-black/5 dark:bg-white/5"
+                    >
+                      {media.type === 'video' ? (
+                        <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
+                      ) : ( 
+                        <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-black/5 dark:border-white/5">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary font-bold">
+                    Apri progetto
+                  </span>
+                  <div className="flex gap-1">
+                    {item.tags.slice(0, 2).map((tag) => (
+                      <span key={tag} className="text-[9px] font-mono uppercase tracking-wider opacity-40">
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
-
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary">
-                  Apri progetto
-                </span>
-                <span className="text-[10px] font-mono uppercase opacity-60">Click</span>
+                </div>
               </div>
             </div>
           </article>
@@ -391,140 +388,177 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       </div>
 
       {activeWork && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] flex flex-col rounded-3xl bg-white text-black dark:bg-black dark:text-white border border-black/20 dark:border-white/20 shadow-2xl overflow-hidden">
-            <div className="absolute top-4 right-4 z-50">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+          <div className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-[2.5rem] bg-white text-black dark:bg-black dark:text-white border border-black/10 dark:border-white/10 shadow-3xl overflow-hidden">
+            <div className="absolute top-6 right-6 z-50">
               <button
                 type="button"
                 onClick={() => setActiveWork(null)}
-                className="text-xs font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 bg-white/80 dark:bg-black/80 backdrop-blur-md px-4 py-2 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors shadow-lg"
+                className="group flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:scale-105 transition-all shadow-xl"
               >
-                Chiudi
+                <span>Chiudi</span>
+                <span className="opacity-50 group-hover:translate-x-1 transition-transform">✕</span>
               </button>
             </div>
 
-            <div className="overflow-y-auto p-6 md:p-12 pt-16 md:pt-12 scroll-smooth">
-              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-primary">
-                    {activeWork.period}
-                  </span>
-                  <h3 className="mt-4 text-3xl md:text-4xl font-bold uppercase tracking-tight">
-                    {activeWork.title}
-                  </h3>
-                  <p className="mt-2 text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-                    {activeWork.location}
-                  </p>
-                  <p className="mt-6 text-sm md:text-base font-mono leading-relaxed opacity-80">
-                    {activeWork.description}
-                  </p>
-                  <ul className="mt-6 space-y-3 text-sm font-mono opacity-70">
-                    {activeWork.highlights.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="text-primary font-bold">▸</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8 flex flex-wrap gap-2">
-                    {activeWork.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 bg-black text-white dark:bg-white dark:text-black rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20">
-                    <img src={toAssetPath(activeWork.heroImage)} alt="" className="w-full h-60 object-cover" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    {(activeWork.previewMedia ?? []).slice(0, 2).map((media, index) => (
-                      <div
-                        key={index}
-                        className="h-28 rounded-2xl overflow-hidden border border-black/10 dark:border-white/20"
-                      >
-                        {media.type === 'video' ? (
-                          <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
-                        ) : (
-                          <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
-                        )}
+            <div className="overflow-y-auto custom-scrollbar">
+              <div className="p-8 md:p-14">
+                <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] items-start">
+                  <div className="space-y-10">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <span className="px-3 py-1 text-[10px] font-mono uppercase tracking-[0.2em] border border-primary/30 text-primary rounded-full">
+                          {activeWork.category}
+                        </span>
+                        <span className="text-xs font-mono opacity-40 tracking-widest uppercase">
+                          {activeWork.period}
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                  {activeWork.siteUrl && (
-                    <a
-                      href={activeWork.siteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full text-xs font-mono uppercase tracking-[0.3em] px-4 py-3 rounded-full bg-primary text-black transition-transform active:scale-95 hover:opacity-90"
-                    >
-                      Vai al sito → dashb.hrz.me
-                    </a>
-                  )}
-                  {activeWork.downloads?.map((download) => (
-                    <a
-                      key={download.label}
-                      href={toAssetPath(download.url)}
-                      download
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full text-xs font-mono uppercase tracking-[0.3em] px-4 py-3 rounded-full bg-primary text-black transition-transform active:scale-95 hover:opacity-90"
-                    >
-                      Download: {download.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+                      <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight">
+                        {activeWork.title}
+                      </h3>
+                      <p className="mt-3 text-sm font-mono uppercase tracking-[0.2em] text-primary opacity-80">
+                        {activeWork.location}
+                      </p>
+                    </div>
 
-              {carouselMedia.length > 0 && (
-                <div className="mt-12">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-                      Panoramica
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={goToPrev}
-                        className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-                      >
-                        Prev
-                      </button>
-                      <button
-                        type="button"
-                        onClick={goToNext}
-                        className="text-[10px] font-mono uppercase tracking-[0.2em] border border-black/20 dark:border-white/20 px-3 py-1 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-                      >
-                        Next
-                      </button>
+                    <div className="space-y-6">
+                      <p className="text-base md:text-lg font-mono leading-relaxed opacity-90">
+                        {activeWork.description}
+                      </p>
+                      
+                      <div className="grid gap-4 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/5 dark:border-white/5">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.3em] opacity-40">Key Highlights</span>
+                        <ul className="space-y-4">
+                          {activeWork.highlights.map((item) => (
+                            <li key={item} className="flex gap-4 items-start">
+                              <span className="text-primary mt-1 text-xs">◆</span>
+                              <span className="text-sm font-mono opacity-80 leading-snug">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {activeWork.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-mono uppercase tracking-[0.1em] px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full opacity-60"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  <div className="overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 flex items-center justify-center bg-black/5 dark:bg-white/5">
-                    {carouselMedia[carouselIndex].type === 'video' ? (
-                      <video
-                        src={toAssetPath(carouselMedia[carouselIndex].src)}
-                        controls
-                        className="w-full h-72 md:h-96 object-contain"
-                        muted
-                        loop
-                        autoPlay
-                        playsInline
+
+                  <div className="space-y-6 lg:sticky lg:top-0">
+                    <div className="group relative overflow-hidden rounded-[2rem] border border-black/10 dark:border-white/10 aspect-[4/3] bg-black/5 dark:bg-white/5">
+                      <img 
+                        src={toAssetPath(activeWork.heroImage)} 
+                        alt="" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                       />
-                    ) : (
-                      <img
-                        src={toAssetPath(carouselMedia[carouselIndex].src)}
-                        alt=""
-                        className="w-full h-72 md:h-96 object-cover transition-all duration-300"
-                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      {activeWork.previewMedia.slice(1, 3).map((media, index) => (
+                        <div
+                          key={index}
+                          className="aspect-square rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5"
+                        >
+                          {media.type === 'video' ? (
+                            <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
+                          ) : (
+                            <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+
+                    {(activeWork.siteUrl || (activeWork.downloads && activeWork.downloads.length > 0)) && (
+                      <div className="space-y-3 pt-6">
+                        {activeWork.siteUrl && (
+                          <a
+                            href={activeWork.siteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between w-full p-5 rounded-2xl bg-primary text-black transition-all hover:scale-[1.02] active:scale-95 group shadow-lg"
+                          >
+                            <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">Visita il sito</span>
+                            <span className="text-sm transition-transform group-hover:translate-x-1">→</span>
+                          </a>
+                        )}
+                        {activeWork.downloads?.map((download) => (
+                          <a
+                            key={download.label}
+                            href={toAssetPath(download.url)}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between w-full p-5 rounded-2xl border border-black/10 dark:border-white/10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all group"
+                          >
+                            <span className="text-xs font-mono uppercase tracking-[0.2em]">{download.label}</span>
+                            <span className="text-xs opacity-40 group-hover:opacity-100 transition-transform group-hover:translate-y-1">↓</span>
+                          </a>
+                        ))}
+                      </div>
                     )}
                   </div>
                 </div>
-              )}
+
+                {carouselMedia.length > 0 && (
+                  <div className="mt-20 pt-12 border-t border-black/5 dark:border-white/5">
+                    <div className="flex items-end justify-between mb-8">
+                      <div>
+                        <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-primary block mb-2">Media Gallery</span>
+                        <h4 className="text-2xl font-bold uppercase tracking-tight">Panoramica completa</h4>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={goToPrev}
+                          className="w-12 h-12 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                        >
+                          ‹
+                        </button>
+                        <button
+                          type="button"
+                          onClick={goToNext}
+                          className="w-12 h-12 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                        >
+                          ›
+                        </button>
+                      </div>
+                    </div>
+                    <div className="relative aspect-video rounded-[2.5rem] border border-black/10 dark:border-white/10 overflow-hidden bg-black/5 dark:bg-white/5 group">
+                      {carouselMedia[carouselIndex].type === 'video' ? (
+                        <video
+                          src={toAssetPath(carouselMedia[carouselIndex].src)}
+                          controls
+                          className="w-full h-full object-contain"
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                        />
+                      ) : (
+                        <img
+                          src={toAssetPath(carouselMedia[carouselIndex].src)}
+                          alt=""
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute bottom-6 left-6 px-4 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10">
+                         <span className="text-[10px] font-mono text-white tracking-widest">
+                            {carouselIndex + 1} / {carouselMedia.length}
+                         </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
