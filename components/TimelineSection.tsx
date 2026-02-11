@@ -20,16 +20,18 @@ const TimelineSection: React.FC = () => {
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">IT & Social Media Manager</h4>
           <span className="font-mono text-xs border border-black dark:border-white/20 px-2 py-0.5 mb-4 inline-block opacity-60">COMEGA S.r.l. // Forlì</span>
           <p className="font-serif italic text-xl leading-relaxed opacity-90 max-w-lg border-l-2 border-black dark:border-white/30 pl-4">
-            Gestione autonoma dell'intero ecosistema IT e della presenza digitale aziendale, dal cablaggio alla strategia LinkedIn.
+            Gestione autonoma dell'intero ecosistema IT, della presenza digitale e dell'identità visiva aziendale, dall'infrastruttura di rete alla progettazione di contenuti, interfacce e strumenti digitali proprietari.
           </p>
           <ul className="mt-6 space-y-3 text-sm md:text-base font-mono leading-relaxed opacity-80">
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Windows Server, Active Directory, DNS/DHCP, GPO.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Virtualizzazione VMware & Hyper-V, migrazioni e consolidamento.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Microsoft 365, Entra ID, Intune, MFA e Conditional Access.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Firewall FortiGate, segmentazione rete, VLAN e VPN.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Virtualizzazione VMware & Hyper-V, migrazioni e consolidamento infrastrutturale.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Microsoft 365, Entra ID, Intune, MFA e Conditional Access e gestione device.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Firewall FortiGate, segmentazione rete, VLAN, VPN e sicurezza perimetrale.</span></li>
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Backup/DR con Veeam e NAS dedicati.</span></li>
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Incident response, analisi forense e remediation.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Piano editoriale LinkedIn, copy tecnico e storytelling industriale.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Brand identity, visaul system e progettazione grafica per contesti industriali.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Photo editing, color grading e valorizzazione asset tecnici.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Video editing e motion content per comunicazione B2B.</span></li>
           </ul>
         </div>
 
@@ -43,9 +45,12 @@ const TimelineSection: React.FC = () => {
             Ruolo IT focalizzato su cybersecurity, hardening e protezione endpoint in ambienti industriali.
           </p>
           <ul className="mt-6 space-y-3 text-sm md:text-base font-mono leading-relaxed opacity-80">
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Sophos Intercept X EDR/XDR e Defender for Endpoint.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Analisi log, eventi e query XDR con approccio analitico.</span></li>
-            <li className="flex gap-3"><span className="text-primary">▸</span><span>Hardening sistemi, auditing e piani correttivi.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Windows Server, Active Directory, DNS/DHCP, GPO.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Virtualizzazione VMware & Hyper-V, migrazioni e consolidamento infrastrutturale.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Microsoft 365, Entra ID, Intune, MFA e Conditional Access e gestione device.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Firewall FortiGate, segmentazione rete, VLAN, VPN e sicurezza perimetrale.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Backup/DR con Veeam e NAS dedicati.</span></li>
+            <li className="flex gap-3"><span className="text-primary">▸</span><span>Incident response, analisi forense e remediation.</span></li>
           </ul>
         </div>
 

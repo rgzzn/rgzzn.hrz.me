@@ -33,15 +33,9 @@ const Footer: React.FC = () => {
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-end opacity-80 mix-blend-multiply border-t border-black/10 dark:border-white/10 pt-12 pb-8">
         <div className="font-serif italic text-2xl leading-relaxed max-w-sm">
-          "Architettura digitale, governance IT e narrazione umana."
+          "Sviluppo software, governance IT e soluzioni digitali."
         </div>
         <div className="flex gap-4 md:justify-end">
-          <a href="#profile" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai al profilo">
-            <Terminal size={20} />
-          </a>
-          <a href="#portfolio" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Vai al portfolio">
-            <Palette size={20} />
-          </a>
           <a href="https://www.linkedin.com/in/rgzzn/" className="p-3 border border-black dark:border-white/20 rounded-full" aria-label="Apri LinkedIn di Luca">
             <AtSign size={20} />
           </a>

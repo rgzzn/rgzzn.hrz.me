@@ -10,53 +10,71 @@ const items = [
   {
     title: "Windows Server & Active Directory",
     category: "DNS / DHCP / GPO / Domain",
-    label: "LOGIC",
+    label: "IT",
     image: "/media/hover/ad_server.png",
     font: "font-mono"
   },
   {
     title: "Microsoft 365 & Entra ID",
     category: "MFA / Conditional Access / Intune",
-    label: "LOGIC",
+    label: "IT",
     image: "/media/hover/entra.png",
     font: "font-mono"
   },
   {
     title: "Endpoint Security",
     category: "Defender / Sophos Intercept X",
-    label: "MAGIC",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
+    label: "IT",
+    image: "/media/hover/endpoint_security.png"
   },
   {
     title: "Firewall & VPN",
     category: "FortiGate / VLAN / Web Filtering",
-    label: "HYBRID",
-    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop"
+    label: "IT",
+    image: "/media/hover/firewall_e_vpn.png"
   },
   {
     title: "Virtualization",
     category: "Hyper-V / VMware / VM Design",
-    label: "HYBRID",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+    label: "IT",
+    image: "/media/hover/virtualization.png"
   },
   {
     title: "Backup & Disaster Recovery",
     category: "Veeam / NAS / Business Continuity",
-    label: "LOGIC",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
+    label: "IT",
+    image: "/media/hover/backup_recovery.png",
     font: "font-mono"
   },
   {
-    title: "PowerShell & Automation",
-    category: "Scripting / Hardening / Log Analysis",
-    label: "MAGIC",
-    image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=800&auto=format&fit=crop"
+    title: "Video Editing & Motion Content",
+    category: "Final Cut pro / Motion / Compressor",
+    label: "Media Designer",
+    image: "/media/hover/fcp.png"
   },
   {
     title: "Digital Marketing B2B",
     category: "LinkedIn / Content / Storytelling",
-    label: "LOGIC",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop"
+    label: "Social Media",
+    image: "/media/hover/marketing.png"
+  },
+  {
+    title: "Photo Editing & Visaul Enhancement",
+    category: "Lightroom / Photoshop / Illustrator",
+    label: "Social Media",
+    image: "/media/hover/lightroom.png"
+  },
+  {
+    title: "Render Composition & Animation",
+    category: "3D Scene Setup, Lightning, Post-Production",
+    label: "Media Designer",
+    image: "/media/hover/blender.png"
+  },
+  {
+    title: "Web & App Development",
+    category: "React / Next.js / Swift",
+    label: "Developer",
+    image: "/media/hover/dev.png"
   }
 ];
 

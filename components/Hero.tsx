@@ -19,10 +19,10 @@ const Hero: React.FC = () => {
           <span className="block opacity-0 animate-enter-up delay-100">RAGAZZINI</span>
           <span className="flex flex-wrap items-baseline gap-2 opacity-0 animate-enter-up delay-200">
             <span className="font-mono text-3xl md:text-5xl lg:text-6xl align-baseline opacity-100 bg-black text-white dark:bg-white dark:text-black px-2">
-              IT & SOCIAL
+              IT & SOCIAL MEDIA
             </span> 
             <span className="font-serif italic font-normal lowercase tracking-normal text-primary flex items-center gap-2">
-              media manager
+              MANAGER
               <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow text-black dark:text-white opacity-50" />
             </span>
           </span>
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         </div>
 
         <p className="mt-8 text-lg md:text-xl leading-relaxed opacity-80 max-w-2xl font-serif italic border-l-2 border-black dark:border-white/20 pl-4">
-        IT & Social Media Manager con esperienza nella gestione di infrastrutture digitali, sicurezza informatica e comunicazione aziendale.
+        IT e Social Media Manager con esperienza nella gestione di infrastrutture digitali, sicurezza informatica e comunicazione aziendale.
 Affianco all’attività IT, coltivo una forte passione per lo sviluppo di applicazioni e progetti web, curando anche gli aspetti di design e user experience.
 Mi occupo di progettare soluzioni digitali affidabili, funzionali e sostenibili nel tempo, unendo competenze tecniche e sensibilità visiva.
         </p>
