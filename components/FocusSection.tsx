@@ -4,7 +4,6 @@ const education = [
   {
     title: 'Lingue',
     place: 'Competenze linguistiche',
-    period: 'Italia / International',
     focus: [
       'Italiano: madrelingua.',
       'Inglese: professionale.'
@@ -13,7 +12,6 @@ const education = [
   {
     title: 'Skill distintivi',
     place: 'Approccio operativo',
-    period: 'Full-stack',
     focus: [
       'Visione full-stack: dall\'hardware al brand.',
       'Autonomia totale nella gestione IT e decisioni critiche.',
@@ -23,7 +21,6 @@ const education = [
   {
     title: 'Obiettivo professionale',
     place: 'Crescita e responsabilità',
-    period: 'Next step',
     focus: [
       'Crescere in ruoli ad alta responsabilità dove tecnologia, sicurezza e comunicazione convivono.',
       'Portare valore reale, ordine dove c\'è caos e soluzioni dove altri vedono solo problemi.'
@@ -47,7 +44,6 @@ const FocusSection: React.FC = () => {
               <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight">
                 {item.title}
               </h3>
-              <span className="text-xs font-mono uppercase opacity-60">{item.period}</span>
             </div>
             <span className="text-xs font-mono border border-black dark:border-white/20 px-2 py-1 inline-block mb-6 opacity-60">
               {item.place}

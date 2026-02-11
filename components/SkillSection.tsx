@@ -4,6 +4,7 @@ import { toAssetPath } from '../utils/assetPath';
 interface SkillSectionProps {
   setActiveImage: (img: string | null) => void;
   setActiveLabel: (label: string | null) => void;
+  isHoverable: boolean;
 }
 
 const items = [
@@ -78,7 +79,7 @@ const items = [
   }
 ];
 
-const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLabel }) => {
+const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
   return (
     <section id="skills" className="max-w-6xl mx-auto w-full relative mb-40">
       <div className="mb-12 opacity-40">
@@ -93,20 +94,28 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
             key={index}
             className="relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
             onMouseEnter={() => {
-              setActiveImage(toAssetPath(item.image));
-              setActiveLabel(item.label);
+              if (isHoverable) {
+                setActiveImage(toAssetPath(item.image));
+                setActiveLabel(item.label);
+              }
             }}
             onMouseLeave={() => {
-              setActiveImage(null);
-              setActiveLabel(null);
+              if (isHoverable) {
+                setActiveImage(null);
+                setActiveLabel(null);
+              }
             }}
             onFocus={() => {
-              setActiveImage(toAssetPath(item.image));
-              setActiveLabel(item.label);
+              if (isHoverable) {
+                setActiveImage(toAssetPath(item.image));
+                setActiveLabel(item.label);
+              }
             }}
             onBlur={() => {
-              setActiveImage(null);
-              setActiveLabel(null);
+              if (isHoverable) {
+                setActiveImage(null);
+                setActiveLabel(null);
+              }
             }}
             tabIndex={0}
           >

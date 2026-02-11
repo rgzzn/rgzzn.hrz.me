@@ -33,6 +33,7 @@ interface WorkItem {
 interface WorkSectionProps {
   setActiveImage: (img: string | null) => void;
   setActiveLabel: (label: string | null) => void;
+  isHoverable: boolean;
 }
 
 // Usa percorsi assoluti che iniziano con / per le risorse nella cartella public
@@ -174,7 +175,7 @@ const workItems: WorkItem[] = [
   },
 ];
 
-const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel }) => {
+const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
   const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   
@@ -268,20 +269,28 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             key={item.title}
             className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5"
             onMouseEnter={() => {
-              setActiveImage(toAssetPath(item.heroImage));
-              setActiveLabel(item.label);
+              if (isHoverable) {
+                setActiveImage(toAssetPath(item.heroImage));
+                setActiveLabel(item.label);
+              }
             }}
             onMouseLeave={() => {
-              setActiveImage(null);
-              setActiveLabel(null);
+              if (isHoverable) {
+                setActiveImage(null);
+                setActiveLabel(null);
+              }
             }}
             onFocus={() => {
-              setActiveImage(toAssetPath(item.heroImage));
-              setActiveLabel(item.label);
+              if (isHoverable) {
+                setActiveImage(toAssetPath(item.heroImage));
+                setActiveLabel(item.label);
+              }
             }}
             onBlur={() => {
-              setActiveImage(null);
-              setActiveLabel(null);
+              if (isHoverable) {
+                setActiveImage(null);
+                setActiveLabel(null);
+              }
             }}
             tabIndex={0}
             onClick={() => handleOpen(item)}
