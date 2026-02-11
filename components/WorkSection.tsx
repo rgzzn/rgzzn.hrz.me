@@ -173,6 +173,43 @@ const workItems: WorkItem[] = [
     downloads: [],
     siteUrl: 'https://dashb.hrz.me',
   },
+  {
+  id: 'Comega-Render',
+  title: 'Industrial Render Composition – Comega',
+  category: '3D Visualization',
+  period: 'Gennaio 2025',
+  location: 'Forlì, Forlì-Cesena',
+  label: 'Render',
+  shortDescription: 'Composizione e valorizzazione render tecnici per macchine industriali Comega.',
+  description: 'Attività di render composition e visual enhancement per macchine industriali Comega. Ottimizzazione di scene 3D fornite dal reparto tecnico, con interventi su camera setup, lighting, materiali e post-produzione per trasformare render ingegneristici in asset marketing ad alto impatto visivo, utilizzati in presentazioni commerciali, brochure e contenuti digital.',
+  highlights: [
+    'Ottimizzazione render tecnici forniti dal team progettazione Comega',
+    'Setup camera e inquadrature orientate alla comunicazione prodotto',
+    'Lighting design per enfatizzare volumi e componenti meccaniche',
+    'Post-produzione e color grading per utilizzo marketing',
+    'Animazioni di presentazione per contenuti digital e social'
+  ],
+  tags: ['Rendering', 'Lighting', '3D Composition', 'Industrial Visualization', 'Comega'],
+  heroImage: '/media/work/render/images/valcolatte.png',
+  previewMedia: [
+    { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
+    { type: 'image', src: '/media/work/render/images/sigma.png' },
+    { type: 'image', src: '/media/work/render/images/aries.png' }
+  ],
+  carousel: [
+    { type: 'image', src: '/media/work/render/images/valcolatte_linea.png' },
+    { type: 'image', src: '/media/work/render/images/sigma.png' },
+    { type: 'image', src: '/media/work/render/images/aries.png' },
+    { type: 'image', src: '/media/work/render/images/valcolatte.png' },
+    { type: 'image', src: '/media/work/render/images/virgo.png' },
+    { type: 'image', src: '/media/work/render/images/virgo_1.png' },
+    { type: 'video', src: '/media/work/render/videos/delta.mp4'},
+    { type: 'video', src: '/media/work/render/videos/valcolatte.mp4'},
+    { type: 'video', src: '/media/work/render/videos/virgo_video.mp4'},
+  ],
+  downloads: [],
+  siteUrl: null
+},
 ];
 
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
