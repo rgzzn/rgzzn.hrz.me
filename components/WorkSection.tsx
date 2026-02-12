@@ -27,7 +27,7 @@ interface WorkItem {
   previewMedia: MediaItem[];
   carousel: MediaItem[];
   downloads: DownloadItem[];
-  siteUrl?: string; // Link to live site (shown instead of or in addition to downloads)
+  siteUrl?: string | null; // Link to live site (shown instead of or in addition to downloads)
 }
 
 interface WorkSectionProps {
@@ -225,6 +225,17 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
   }, [activeWork]);
 
   useEffect(() => {
+    if (!activeWork) return;
+
+    const { overflow } = document.body.style;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [activeWork]);
+
+  useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setActiveWork(null);
@@ -248,6 +259,13 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
     setActiveWork(item);
     setActiveImage(toAssetPath(item.heroImage));
     setActiveLabel(item.label);
+  };
+
+  const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>, item: WorkItem) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleOpen(item);
+    }
   };
   
   return (
@@ -327,7 +345,11 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
               }
             }}
             tabIndex={0}
+            role="button"
+            aria-haspopup="dialog"
+            aria-label={`Apri dettagli progetto ${item.title}`}
             onClick={() => handleOpen(item)}
+            onKeyDown={(event) => handleCardKeyDown(event, item)}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             
@@ -361,9 +383,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                       className="h-20 rounded-xl border border-black/10 dark:border-white/20 overflow-hidden bg-black/5 dark:bg-white/5"
                     >
                       {media.type === 'video' ? (
-                        <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
+                        <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline preload="metadata" />
                       ) : ( 
-                        <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
+                        <img src={toAssetPath(media.src)} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
                       )}
                     </div>
                   ))}
@@ -388,12 +410,22 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       </div>
 
       {activeWork && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-[2.5rem] bg-white text-black dark:bg-black dark:text-white border border-black/10 dark:border-white/10 shadow-3xl overflow-hidden">
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+          onClick={() => setActiveWork(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="active-work-title"
+            className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-[2.5rem] bg-white text-black dark:bg-black dark:text-white border border-black/10 dark:border-white/10 shadow-3xl overflow-hidden"
+            onClick={(event) => event.stopPropagation()}
+          >
             <div className="absolute top-6 right-6 z-50">
               <button
                 type="button"
                 onClick={() => setActiveWork(null)}
+                aria-label="Chiudi dettagli progetto"
                 className="group flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:scale-105 transition-all shadow-xl"
               >
                 <span>Chiudi</span>
@@ -414,7 +446,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                           {activeWork.period}
                         </span>
                       </div>
-                      <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight">
+                      <h3 id="active-work-title" className="text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight">
                         {activeWork.title}
                       </h3>
                       <p className="mt-3 text-sm font-mono uppercase tracking-[0.2em] text-primary opacity-80">
@@ -457,6 +489,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                       <img 
                         src={toAssetPath(activeWork.heroImage)} 
                         alt="" 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -469,9 +503,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                           className="aspect-square rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5"
                         >
                           {media.type === 'video' ? (
-                            <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline />
+                            <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline preload="metadata" />
                           ) : (
-                            <img src={toAssetPath(media.src)} alt="" className="h-full w-full object-cover" />
+                            <img src={toAssetPath(media.src)} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
                           )}
                         </div>
                       ))}
@@ -519,6 +553,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                         <button
                           type="button"
                           onClick={goToPrev}
+                          aria-label="Media precedente"
                           className="w-12 h-12 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
                         >
                           ‹
@@ -526,6 +561,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                         <button
                           type="button"
                           onClick={goToNext}
+                          aria-label="Media successivo"
                           className="w-12 h-12 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
                         >
                           ›
@@ -547,6 +583,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                         <img
                           src={toAssetPath(carouselMedia[carouselIndex].src)}
                           alt=""
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                         />
                       )}
