@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navigation from './components/Navigation';
@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [activeLabel, setActiveLabel] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHoverable, setIsHoverable] = useState(false);
+  const rafIdRef = useRef<number | null>(null);
 
   useEffect(() => {
     // Check if the device supports hover and is not a small screen
@@ -39,12 +40,33 @@ const App: React.FC = () => {
   useEffect(() => {
     if (!isHoverable) return;
 
+    let latestX = 0;
+    let latestY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+      latestX = e.clientX;
+      latestY = e.clientY;
+
+      if (rafIdRef.current !== null) {
+        return;
+      }
+
+      rafIdRef.current = window.requestAnimationFrame(() => {
+        setMousePos({ x: latestX, y: latestY });
+        rafIdRef.current = null;
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+
+      if (rafIdRef.current !== null) {
+        window.cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+    };
   }, [isHoverable]);
 
   return (

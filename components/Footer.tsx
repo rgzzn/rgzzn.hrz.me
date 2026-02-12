@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Palette, AtSign } from 'lucide-react';
+import { AtSign } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
