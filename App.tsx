@@ -71,6 +71,19 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white font-sans selection:bg-primary selection:text-white overflow-x-hidden relative">
+      <div className="pointer-events-none fixed inset-0 -z-0 hidden md:block" aria-hidden="true">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-primary/15 blur-3xl animate-aurora-drift" />
+        <div className="absolute top-1/3 -right-28 h-80 w-80 rounded-full bg-fuchsia-300/20 dark:bg-primary/20 blur-3xl animate-aurora-drift delay-700" />
+        <div className="absolute bottom-4 left-1/3 h-64 w-64 rounded-full bg-purple-200/20 dark:bg-indigo-500/20 blur-3xl animate-aurora-drift delay-300" />
+      </div>
+
+      <div className="pointer-events-none fixed left-1/2 bottom-5 -translate-x-1/2 z-20 md:hidden" aria-hidden="true">
+        <div className="flex items-center gap-2 rounded-full border border-black/10 dark:border-white/20 px-4 py-2 backdrop-blur bg-white/30 dark:bg-black/30">
+          <span className="h-2 w-2 rounded-full bg-primary animate-mobile-float" />
+          <span className="h-2 w-2 rounded-full bg-primary/70 animate-mobile-float delay-200" />
+          <span className="h-2 w-2 rounded-full bg-primary/50 animate-mobile-float delay-500" />
+        </div>
+      </div>
       
       {/* Film Noise Overlay */}
       <div className="bg-noise"></div>

@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             </span> 
             <span className="font-serif italic font-normal lowercase tracking-normal text-primary flex items-center gap-2">
               MANAGER
-              <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow text-black dark:text-white opacity-50" />
+              <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow md:animate-wiggle-soft text-black dark:text-white opacity-50" />
             </span>
           </span>
         </h1>
@@ -38,6 +38,16 @@ const Hero: React.FC = () => {
 Affianco all’attività IT, coltivo una forte passione per lo sviluppo di applicazioni e progetti web, curando anche gli aspetti di design e user experience.
 Mi occupo di progettare soluzioni digitali affidabili, funzionali e sostenibili nel tempo, unendo competenze tecniche e sensibilità visiva.
         </p>
+
+        <div className="mt-6 flex items-center gap-2 md:gap-3 md:ml-1">
+          <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] opacity-60">mood</span>
+          <div className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-primary animate-sparkle-dance" />
+            <span className="h-2.5 w-2.5 rounded-full bg-primary/70 animate-sparkle-dance delay-200" />
+            <span className="h-2.5 w-2.5 rounded-full bg-primary/50 animate-sparkle-dance delay-500" />
+          </div>
+        </div>
+
       </div>
 
       <div className="hidden md:flex flex-col items-center gap-2 mt-4 opacity-0 animate-enter-up delay-500 animate-float-delayed">
