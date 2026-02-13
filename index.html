@@ -44,8 +44,11 @@
               "pulse-soft": "pulse-soft 2s infinite",
               "ring-pulse": "ring-pulse 2s ease-in-out infinite",
               "aurora-drift": "aurora-drift 16s ease-in-out infinite",
-              "sparkle-dance": "sparkle-dance 7s ease-in-out infinite",
               "mobile-float": "mobile-float 3.2s ease-in-out infinite",
+              "mobile-glow": "mobile-glow 2.8s ease-in-out infinite",
+              "mobile-card": "mobile-card 4.5s ease-in-out infinite",
+              "mobile-bob": "mobile-bob 3.6s ease-in-out infinite",
+              "mobile-sheen": "mobile-sheen 3.2s linear infinite",
               "card-shimmer": "card-shimmer 5s ease-in-out infinite",
               "wiggle-soft": "wiggle-soft 3s ease-in-out infinite",
             },
@@ -63,9 +66,21 @@
                 "0%, 100%": { transform: "translateY(0) scale(1)" },
                 "50%": { transform: "translateY(-6px) scale(1.05)" },
               },
-              "sparkle-dance": {
-                "0%, 100%": { transform: "translateY(0) rotate(0deg)", opacity: "0.45" },
-                "50%": { transform: "translateY(-8px) rotate(16deg)", opacity: "1" },
+              "mobile-glow": {
+                "0%, 100%": { opacity: "0.55", boxShadow: "0 0 0 0 rgba(168,85,247,0.25)" },
+                "50%": { opacity: "1", boxShadow: "0 0 0 6px rgba(168,85,247,0)" },
+              },
+              "mobile-card": {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-4px)" },
+              },
+              "mobile-bob": {
+                "0%, 100%": { transform: "translateX(0)" },
+                "50%": { transform: "translateX(3px)" },
+              },
+              "mobile-sheen": {
+                "0%": { backgroundPosition: "100% 0" },
+                "100%": { backgroundPosition: "-120% 0" },
               },
               "aurora-drift": {
                 "0%": { transform: "translate3d(-8%, -2%, 0) scale(1)", opacity: "0.26" },

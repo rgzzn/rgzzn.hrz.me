@@ -39,13 +39,10 @@ Affianco all’attività IT, coltivo una forte passione per lo sviluppo di appli
 Mi occupo di progettare soluzioni digitali affidabili, funzionali e sostenibili nel tempo, unendo competenze tecniche e sensibilità visiva.
         </p>
 
-        <div className="mt-6 flex items-center gap-2 md:gap-3 md:ml-1">
-          <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] opacity-60">mood</span>
-          <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary animate-sparkle-dance" />
-            <span className="h-2.5 w-2.5 rounded-full bg-primary/70 animate-sparkle-dance delay-200" />
-            <span className="h-2.5 w-2.5 rounded-full bg-primary/50 animate-sparkle-dance delay-500" />
-          </div>
+        <div className="mt-6 md:hidden relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary/40 px-4 py-2 bg-primary/10">
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary">Nuovi progetti</span>
+          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-mobile-float" />
+          <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(168,85,247,0.22),transparent)] bg-[length:220%_100%] animate-mobile-sheen" />
         </div>
 
       </div>

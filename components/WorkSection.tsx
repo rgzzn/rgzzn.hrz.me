@@ -319,7 +319,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         {workItems.map((item) => (
           <article
             key={item.id}
-            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] cursor-pointer"
+            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] motion-safe:animate-mobile-card md:animate-none cursor-pointer"
             onMouseEnter={() => {
               if (isHoverable) {
                 setActiveImage(toAssetPath(item.heroImage));
@@ -355,6 +355,10 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             
             <div className="relative z-10 flex flex-col h-full justify-between gap-6">
               <div className="space-y-4">
+                <div className="md:hidden inline-flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border border-primary/40 text-primary bg-primary/10 animate-mobile-glow">
+                  tap per dettagli
+                </div>
+
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary md:hidden animate-mobile-float" />
