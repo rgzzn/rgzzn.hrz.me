@@ -43,8 +43,51 @@
               "grow-h": "grow-h 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               "pulse-soft": "pulse-soft 2s infinite",
               "ring-pulse": "ring-pulse 2s ease-in-out infinite",
+              "aurora-drift": "aurora-drift 16s ease-in-out infinite",
+              "mobile-float": "mobile-float 3.2s ease-in-out infinite",
+              "mobile-glow": "mobile-glow 2.8s ease-in-out infinite",
+              "mobile-card": "mobile-card 4.5s ease-in-out infinite",
+              "mobile-bob": "mobile-bob 3.6s ease-in-out infinite",
+              "mobile-sheen": "mobile-sheen 3.2s linear infinite",
+              "card-shimmer": "card-shimmer 5s ease-in-out infinite",
+              "wiggle-soft": "wiggle-soft 3s ease-in-out infinite",
             },
             keyframes: {
+              "wiggle-soft": {
+                "0%, 100%": { transform: "rotate(0deg)" },
+                "25%": { transform: "rotate(-4deg)" },
+                "75%": { transform: "rotate(4deg)" },
+              },
+              "card-shimmer": {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+              "mobile-float": {
+                "0%, 100%": { transform: "translateY(0) scale(1)" },
+                "50%": { transform: "translateY(-6px) scale(1.05)" },
+              },
+              "mobile-glow": {
+                "0%, 100%": { opacity: "0.55", boxShadow: "0 0 0 0 rgba(168,85,247,0.25)" },
+                "50%": { opacity: "1", boxShadow: "0 0 0 6px rgba(168,85,247,0)" },
+              },
+              "mobile-card": {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-4px)" },
+              },
+              "mobile-bob": {
+                "0%, 100%": { transform: "translateX(0)" },
+                "50%": { transform: "translateX(3px)" },
+              },
+              "mobile-sheen": {
+                "0%": { backgroundPosition: "100% 0" },
+                "100%": { backgroundPosition: "-120% 0" },
+              },
+              "aurora-drift": {
+                "0%": { transform: "translate3d(-8%, -2%, 0) scale(1)", opacity: "0.26" },
+                "40%": { transform: "translate3d(6%, 4%, 0) scale(1.08)", opacity: "0.38" },
+                "70%": { transform: "translate3d(-2%, 7%, 0) scale(0.96)", opacity: "0.28" },
+                "100%": { transform: "translate3d(-8%, -2%, 0) scale(1)", opacity: "0.26" },
+              },
               "ring-pulse": {
                 "0%, 100%": {
                   boxShadow: "0 0 0 2px rgba(168, 85, 247, 0.6)",
@@ -178,6 +221,17 @@
 
       .delay-1000 {
         animation-delay: 1000ms;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
     <script type="importmap">
