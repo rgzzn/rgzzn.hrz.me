@@ -319,7 +319,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         {workItems.map((item) => (
           <article
             key={item.id}
-            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/5 cursor-pointer"
+            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] motion-safe:animate-mobile-card md:animate-none cursor-pointer"
             onMouseEnter={() => {
               if (isHoverable) {
                 setActiveImage(toAssetPath(item.heroImage));
@@ -351,12 +351,16 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             onClick={() => handleOpen(item)}
             onKeyDown={(event) => handleCardKeyDown(event, item)}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:animate-card-shimmer bg-[length:200%_200%]" />
             
             <div className="relative z-10 flex flex-col h-full justify-between gap-6">
               <div className="space-y-4">
+                <div className="md:hidden inline-flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border border-primary/40 text-primary bg-primary/10 animate-mobile-glow">
+                  tap per dettagli
+                </div>
+
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full flex items-center gap-2">
                     {item.category}
                   </span>
                   <span className="text-xs font-mono opacity-60">{item.period}</span>
@@ -421,20 +425,26 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-[2.5rem] bg-white text-black dark:bg-black dark:text-white border border-black/10 dark:border-white/10 shadow-3xl overflow-hidden"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="absolute top-6 right-6 z-50">
-              <button
-                type="button"
-                onClick={() => setActiveWork(null)}
-                aria-label="Chiudi dettagli progetto"
-                className="group flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:scale-105 transition-all shadow-xl"
-              >
-                <span>Chiudi</span>
-                <span className="opacity-50 group-hover:translate-x-1 transition-transform">✕</span>
-              </button>
+            <div className="sticky top-0 z-50 border-b border-black/10 dark:border-white/10 bg-white/95 dark:bg-black/95 backdrop-blur-xl px-5 py-4 md:px-10 md:py-5">
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-primary/80">Dettaglio progetto</span>
+                  <p className="mt-1 text-sm md:text-base font-bold uppercase tracking-[0.06em] truncate">{activeWork.title}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveWork(null)}
+                  aria-label="Chiudi dettagli progetto"
+                  className="shrink-0 group flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black px-4 py-2.5 md:px-5 md:py-3 rounded-full hover:scale-105 transition-all shadow-xl"
+                >
+                  <span>Chiudi</span>
+                  <span className="opacity-50 group-hover:translate-x-1 transition-transform">✕</span>
+                </button>
+              </div>
             </div>
 
             <div className="overflow-y-auto custom-scrollbar">
-              <div className="p-8 md:p-14">
+              <div className="p-5 pt-6 md:p-14">
                 <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] items-start">
                   <div className="space-y-10">
                     <div>
