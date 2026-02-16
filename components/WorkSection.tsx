@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { toAssetPath } from '../utils/assetPath';
 
 interface MediaItem {
@@ -209,6 +209,99 @@ const workItems: WorkItem[] = [
   },
 ];
 
+interface TiltCardProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  tabIndex?: number;
+  role?: string;
+  "aria-haspopup"?: boolean | "dialog" | "menu" | "listbox" | "tree" | "grid";
+  "aria-label"?: string;
+  onKeyDown?: (e: React.KeyboardEvent) => void;
+}
+
+const TiltCard: React.FC<TiltCardProps> = ({ children, className, ...props }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
+  const [opacity, setOpacity] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
+    const rotateY = ((x - centerX) / centerX) * 10;
+
+    setRotation({ x: rotateX, y: rotateY });
+    setGlarePosition({
+      x: (x / rect.width) * 100,
+      y: (y / rect.height) * 100,
+    });
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+    setOpacity(0);
+    if (props.onMouseLeave) props.onMouseLeave();
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      className={`relative transition-transform duration-200 ease-out ${className} ${
+        isVisible ? "motion-safe:animate-mobile-3d-reveal" : "opacity-0"
+      }`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(1.02, 1.02, 1.02)`,
+        transformStyle: "preserve-3d",
+      }}
+      {...props}
+    >
+      <div
+        className="absolute inset-0 pointer-events-none z-50 mix-blend-overlay opacity-0 transition-opacity duration-500"
+        style={{
+          background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%)`,
+          opacity: opacity,
+        }}
+      />
+      {children}
+    </div>
+  );
+};
+
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
   const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -296,7 +389,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
               'Generazione immagini e video 3D da Blender',
               'Development di app e website',
             ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
+              <div key={item} className="flex items-start gap-3 md:hover:animate-desktop-focus-expand origin-left transition-transform">
                 <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
                 <p className="text-sm font-mono opacity-70 leading-relaxed">{item}</p>
               </div>
@@ -317,9 +410,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
 
       <div className="grid gap-6 md:grid-cols-2">
         {workItems.map((item) => (
-          <article
+          <TiltCard
             key={item.id}
-            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] motion-safe:animate-mobile-card md:animate-none cursor-pointer"
+            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] md:animate-none cursor-pointer"
             onMouseEnter={() => {
               if (isHoverable) {
                 setActiveImage(toAssetPath(item.heroImage));
@@ -353,7 +446,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:animate-card-shimmer bg-[length:200%_200%]" />
             
-            <div className="relative z-10 flex flex-col h-full justify-between gap-6">
+            <div className="relative z-10 flex flex-col h-full justify-between gap-6 pointer-events-none">
               <div className="space-y-4">
                 <div className="md:hidden inline-flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border border-primary/40 text-primary bg-primary/10 animate-mobile-glow">
                   tap per dettagli
@@ -410,7 +503,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                 </div>
               </div>
             </div>
-          </article>
+          </TiltCard>
         ))}
       </div>
 
