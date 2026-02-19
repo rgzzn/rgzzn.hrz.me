@@ -224,12 +224,21 @@ interface TiltCardProps {
   onKeyDown?: (e: React.KeyboardEvent) => void;
 }
 
-const TiltCard: React.FC<TiltCardProps> = ({ children, className, ...props }) => {
+const TiltCard: React.FC<TiltCardProps> = ({
+  children,
+  className,
+  onMouseEnter,
+  onMouseLeave,
+  onFocus,
+  onBlur,
+  ...props
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
   const [opacity, setOpacity] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTilting, setIsTilting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -262,6 +271,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className, ...props }) =>
     const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
     const rotateY = ((x - centerX) / centerX) * 10;
 
+    setIsTilting(true);
     setRotation({ x: rotateX, y: rotateY });
     setGlarePosition({
       x: (x / rect.width) * 100,
@@ -270,22 +280,40 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className, ...props }) =>
     setOpacity(1);
   };
 
-  const handleMouseLeave = () => {
+  const resetTilt = () => {
+    setIsTilting(false);
     setRotation({ x: 0, y: 0 });
     setOpacity(0);
-    if (props.onMouseLeave) props.onMouseLeave();
+  };
+
+  const handleMouseEnter = () => {
+    setIsTilting(true);
+    onMouseEnter?.();
+  };
+
+  const handleMouseLeave = () => {
+    resetTilt();
+    onMouseLeave?.();
+  };
+
+  const handleBlur = () => {
+    resetTilt();
+    onBlur?.();
   };
 
   return (
     <div
       ref={cardRef}
-      className={`relative transition-transform duration-200 ease-out ${className} ${
+      className={`relative will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${className} ${
         isVisible ? "motion-safe:animate-mobile-3d-reveal" : "opacity-0"
       }`}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onFocus={onFocus}
+      onBlur={handleBlur}
       style={{
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(1.02, 1.02, 1.02)`,
+        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(${isTilting ? 1.02 : 1}, ${isTilting ? 1.02 : 1}, ${isTilting ? 1.02 : 1})`,
         transformStyle: "preserve-3d",
       }}
       {...props}

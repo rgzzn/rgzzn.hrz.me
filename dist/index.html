@@ -51,8 +51,43 @@
               "mobile-sheen": "mobile-sheen 3.2s linear infinite",
               "card-shimmer": "card-shimmer 5s ease-in-out infinite",
               "wiggle-soft": "wiggle-soft 3s ease-in-out infinite",
+              "desktop-hover-glide":
+                "desktop-hover-glide 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both",
+              "desktop-reveal-stagger":
+                "desktop-reveal-stagger 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
+              "desktop-focus-expand":
+                "desktop-focus-expand 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both",
+              "mobile-tap-scale": "mobile-tap-scale 0.15s ease-out forwards",
+              "mobile-slide-up":
+                "mobile-slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both",
+              "mobile-horizontal-scroll-hint":
+                "mobile-horizontal-scroll-hint 2s ease-in-out infinite",
             },
             keyframes: {
+              "desktop-hover-glide": {
+                "0%": { transform: "translateY(0)" },
+                "100%": { transform: "translateY(-8px)" },
+              },
+              "desktop-reveal-stagger": {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "desktop-focus-expand": {
+                "0%": { transform: "scale(1)" },
+                "100%": { transform: "scale(1.05)" },
+              },
+              "mobile-tap-scale": {
+                "0%": { transform: "scale(1)" },
+                "100%": { transform: "scale(0.96)" },
+              },
+              "mobile-slide-up": {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "mobile-horizontal-scroll-hint": {
+                "0%, 100%": { transform: "translateX(0)" },
+                "50%": { transform: "translateX(10px)" },
+              },
               "wiggle-soft": {
                 "0%, 100%": { transform: "rotate(0deg)" },
                 "25%": { transform: "rotate(-4deg)" },
@@ -67,8 +102,14 @@
                 "50%": { transform: "translateY(-6px) scale(1.05)" },
               },
               "mobile-glow": {
-                "0%, 100%": { opacity: "0.55", boxShadow: "0 0 0 0 rgba(168,85,247,0.25)" },
-                "50%": { opacity: "1", boxShadow: "0 0 0 6px rgba(168,85,247,0)" },
+                "0%, 100%": {
+                  opacity: "0.55",
+                  boxShadow: "0 0 0 0 rgba(168,85,247,0.25)",
+                },
+                "50%": {
+                  opacity: "1",
+                  boxShadow: "0 0 0 6px rgba(168,85,247,0)",
+                },
               },
               "mobile-card": {
                 "0%, 100%": { transform: "translateY(0)" },
@@ -83,10 +124,22 @@
                 "100%": { backgroundPosition: "-120% 0" },
               },
               "aurora-drift": {
-                "0%": { transform: "translate3d(-8%, -2%, 0) scale(1)", opacity: "0.26" },
-                "40%": { transform: "translate3d(6%, 4%, 0) scale(1.08)", opacity: "0.38" },
-                "70%": { transform: "translate3d(-2%, 7%, 0) scale(0.96)", opacity: "0.28" },
-                "100%": { transform: "translate3d(-8%, -2%, 0) scale(1)", opacity: "0.26" },
+                "0%": {
+                  transform: "translate3d(-8%, -2%, 0) scale(1)",
+                  opacity: "0.26",
+                },
+                "40%": {
+                  transform: "translate3d(6%, 4%, 0) scale(1.08)",
+                  opacity: "0.38",
+                },
+                "70%": {
+                  transform: "translate3d(-2%, 7%, 0) scale(0.96)",
+                  opacity: "0.28",
+                },
+                "100%": {
+                  transform: "translate3d(-8%, -2%, 0) scale(1)",
+                  opacity: "0.26",
+                },
               },
               "ring-pulse": {
                 "0%, 100%": {
@@ -159,17 +212,35 @@
         }
       }
 
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      ::-webkit-scrollbar {
-        display: none;
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(10, 10, 10, 0.24) transparent;
       }
 
-      /* Hide scrollbar for IE, Edge and Firefox */
-      html {
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(10, 10, 10, 0.24);
+        border: 2px solid transparent;
+        border-radius: 999px;
+        background-clip: padding-box;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          scrollbar-color: rgba(245, 245, 245, 0.28) transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: rgba(245, 245, 245, 0.28);
+        }
       }
 
       .writing-vertical-rl {
@@ -223,6 +294,11 @@
         animation-delay: 1000ms;
       }
 
+      :focus-visible {
+        outline: 2px solid #a855f7;
+        outline-offset: 3px;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -247,7 +323,7 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-DChCpbhF.js"></script>
+    <script type="module" crossorigin src="/assets/index-DvQ6fu6f.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-B-HLj-Qd.css">
   </head>
 
