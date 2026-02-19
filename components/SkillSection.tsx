@@ -60,14 +60,14 @@ const items = [
     image: "/media/hover/marketing.png"
   },
   {
-    title: "Photo Editing & Visaul Enhancement",
+    title: "Photo Editing & Visual Enhancement",
     category: "Lightroom / Photoshop / Illustrator",
     label: "Social Media",
     image: "/media/hover/lightroom.png"
   },
   {
     title: "Render Composition & Animation",
-    category: "3D Scene Setup, Lightning, Post-Production",
+    category: "3D Scene Setup, Lighting, Post-Production",
     label: "Media Designer",
     image: "/media/hover/blender.png"
   },

@@ -91,7 +91,7 @@ const App: React.FC = () => {
 
       <div className="flex w-full">
         {/* Main Content Area */}
-        <main className="flex-1 flex flex-col relative pl-6 pr-[calc(5rem+env(safe-area-inset-right))] md:pl-20 md:pr-[calc(7rem+env(safe-area-inset-right))] pt-12 pb-12">
+        <main className="relative flex flex-1 flex-col pl-6 pr-6 pt-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] md:pl-20 md:pr-[calc(7rem+env(safe-area-inset-right))] md:pb-12">
           
           <Hero />
           

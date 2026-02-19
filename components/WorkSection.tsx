@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toAssetPath } from '../utils/assetPath';
 
 interface MediaItem {
@@ -155,7 +155,7 @@ const workItems: WorkItem[] = [
     previewMedia: [
       { type: 'image', src: '/media/work/render/images/valcolatte_linea.webp' },
       { type: 'image', src: '/media/work/render/images/sigma.webp' },
-      { type: 'image', src: '/media/work/render/images/aries.png' }
+      { type: 'image', src: '/media/work/render/images/aries.webp' }
     ],
     carousel: [
       { type: 'image', src: '/media/work/render/images/valcolatte_linea.webp' },
@@ -305,6 +305,12 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className, ...props }) =>
 const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
   const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
+
+  const closeActiveWork = useCallback(() => {
+    setActiveWork(null);
+    setActiveImage(null);
+    setActiveLabel(null);
+  }, [setActiveImage, setActiveLabel]);
   
   const carouselMedia = useMemo(
     () => (activeWork ? activeWork.carousel : []),
@@ -331,12 +337,12 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setActiveWork(null);
+        closeActiveWork();
       }
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, []);
+  }, [closeActiveWork]);
 
   const goToNext = () => {
     if (carouselMedia.length === 0) return;
@@ -350,8 +356,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
 
   const handleOpen = (item: WorkItem) => {
     setActiveWork(item);
-    setActiveImage(toAssetPath(item.heroImage));
-    setActiveLabel(item.label);
+    setActiveImage(null);
+    setActiveLabel(null);
   };
 
   const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>, item: WorkItem) => {
@@ -510,7 +516,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       {activeWork && (
         <div
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
-          onClick={() => setActiveWork(null)}
+          onClick={closeActiveWork}
         >
           <div
             role="dialog"
@@ -522,7 +528,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             <div className="absolute top-6 right-6 z-50">
               <button
                 type="button"
-                onClick={() => setActiveWork(null)}
+                onClick={closeActiveWork}
                 aria-label="Chiudi dettagli progetto"
                 className="group flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:scale-105 transition-all shadow-xl"
               >
