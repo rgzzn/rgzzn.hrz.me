@@ -34,10 +34,7 @@ const Hero: React.FC = () => {
         </div>
 
         <p className="mt-8 text-lg md:text-xl leading-relaxed opacity-80 max-w-2xl font-serif italic border-l-2 border-black dark:border-white/20 pl-4">
-        IT e Social Media Manager con esperienza nella gestione di infrastrutture digitali, sicurezza informatica e comunicazione aziendale.
-Affianco all’attività IT, coltivo una forte passione per lo sviluppo di applicazioni e progetti web, curando anche gli aspetti di design e user experience.
-Mi occupo di progettare soluzioni digitali affidabili, funzionali e sostenibili nel tempo, unendo competenze tecniche e sensibilità visiva.
-        </p>
+        IT & Social Media Manager con esperienza nella gestione di infrastrutture digitali, cybersecurity e comunicazione aziendale.<br></br>Integro governance IT e sviluppo di applicazioni web, curandone architettura, design e user experience in modo strategic e coerente.<br></br>Progetto soluzioni digitali affidabili e scalabili, unendo competenze tecniche, visione sistematica e sensibilità visiva.<br></br>Mi occupo inoltre della componente grafica e identitaria dei progetti: brand identity, materiali marketing e asset visivi allineati al posizionamento aziendale.</p>
 
         <div className="mt-6 md:hidden relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary/40 px-4 py-2 bg-primary/10">
           <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary">Nuovi progetti</span>

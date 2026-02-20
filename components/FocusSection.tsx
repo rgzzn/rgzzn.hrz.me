@@ -13,17 +13,17 @@ const education = [
     title: 'Skill distintivi',
     place: 'Approccio operativo',
     focus: [
-      'Visione full-stack: dall\'hardware al brand.',
-      'Autonomia totale nella gestione IT e decisioni critiche.',
-      'Capacità di lavorare sotto pressione in situazioni critiche.'
+      'Visione sistematica completa: dall\'infrastruttura fisica al posizionamento del brand.',
+      'Responsabilità dirette su indecisioni IT strategiche e operative, senza dipendenza da consulenze esterne.',
+      'Gestione efficace di ambienti ad alta pressione: incidenti, downtime, criticità di sicurezza e scadenze industriali'
     ]
   },
   {
     title: 'Obiettivo professionale',
     place: 'Crescita e responsabilità',
     focus: [
-      'Crescere in ruoli ad alta responsabilità dove tecnologia, sicurezza e comunicazione convivono.',
-      'Portare valore reale, ordine dove c\'è caos e soluzioni dove altri vedono solo problemi.'
+      'Consolidare ruoli ad alta responsabilità dove infrastruttura IT, sicurezza e comunicazione strategica convergono in un unico processo decisionale.',
+      'Generare valore concreto per l\'organizzazione, riportando struttura dove c\'è frammentazione e trasformando criticità operative in soluzioni scalabili.'
     ]
   }
 ];
