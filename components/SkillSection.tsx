@@ -12,70 +12,70 @@ const items = [
     title: "Windows Server & Active Directory",
     category: "DNS / DHCP / GPO / Domain",
     label: "IT",
-    image: "/media/hover/ad_server.png",
+    image: "/media/hover/ad_server.webp",
     font: "font-mono"
   },
   {
     title: "Microsoft 365 & Entra ID",
     category: "MFA / Conditional Access / Intune",
     label: "IT",
-    image: "/media/hover/entra.png",
+    image: "/media/hover/entra.webp",
     font: "font-mono"
   },
   {
     title: "Endpoint Security",
     category: "Defender / Sophos Intercept X",
     label: "IT",
-    image: "/media/hover/endpoint_security.png"
+    image: "/media/hover/endpoint_security.webp"
   },
   {
     title: "Firewall & VPN",
     category: "FortiGate / VLAN / Web Filtering",
     label: "IT",
-    image: "/media/hover/firewall_e_vpn.png"
+    image: "/media/hover/firewall_e_vpn.webp"
   },
   {
     title: "Virtualization",
     category: "Hyper-V / VMware / VM Design",
     label: "IT",
-    image: "/media/hover/virtualization.png"
+    image: "/media/hover/virtualization.webp"
   },
   {
     title: "Backup & Disaster Recovery",
     category: "Veeam / NAS / Business Continuity",
     label: "IT",
-    image: "/media/hover/backup_recovery.png",
+    image: "/media/hover/backup_recovery.webp",
     font: "font-mono"
   },
   {
     title: "Video Editing & Motion Content",
     category: "Final Cut pro / Motion / Compressor",
     label: "Media Designer",
-    image: "/media/hover/fcp.png"
+    image: "/media/hover/fcp.webp"
   },
   {
     title: "Digital Marketing B2B",
     category: "LinkedIn / Content / Storytelling",
     label: "Social Media",
-    image: "/media/hover/marketing.png"
+    image: "/media/hover/marketing.webp"
   },
   {
     title: "Photo Editing & Visual Enhancement",
     category: "Lightroom / Photoshop / Illustrator",
     label: "Social Media",
-    image: "/media/hover/lightroom.png"
+    image: "/media/hover/lightroom.webp"
   },
   {
     title: "Render Composition & Animation",
     category: "3D Scene Setup, Lighting, Post-Production",
     label: "Media Designer",
-    image: "/media/hover/blender.png"
+    image: "/media/hover/blender.webp"
   },
   {
     title: "Web & App Development",
     category: "React / Next.js / Swift",
     label: "Developer",
-    image: "/media/hover/dev.png"
+    image: "/media/hover/dev.webp"
   }
 ];
 

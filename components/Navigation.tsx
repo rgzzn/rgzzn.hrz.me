@@ -84,7 +84,7 @@ const Navigation: React.FC = () => {
       >
         <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border border-primary/40 bg-black/50 shadow-2xl mb-12">
           <img
-            src={toAssetPath("/assets/luca.png")}
+            src={toAssetPath("/assets/luca.webp")}
             alt="Luca Ragazzini"
             className="h-full w-full object-cover"
           />
@@ -112,7 +112,7 @@ const Navigation: React.FC = () => {
       <aside className="fixed inset-y-0 right-0 hidden h-[100svh] w-16 flex-col items-center justify-between border-l border-white/10 bg-black text-primary pt-[calc(1.5rem+env(safe-area-inset-top))] pb-[calc(1.5rem+env(safe-area-inset-bottom))] z-40 md:flex">
         <div className="h-8 w-8 flex-shrink-0 overflow-hidden rounded-full animate-ring-pulse">
           <img
-            src={toAssetPath("/assets/luca.png")}
+            src={toAssetPath("/assets/luca.webp")}
             alt="Luca Ragazzini"
             className="h-full w-full rounded-full object-cover"
           />
