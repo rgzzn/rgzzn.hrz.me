@@ -1,41 +1,56 @@
 # LR Portfolio
 
-Portfolio personale realizzato con **React** e **Vite** per presentare il profilo professionale di Luca Ragazzini (IT & Social Media Manager).
+Portfolio personale di Luca Ragazzini, realizzato con React + Vite.
 
 ## Panoramica
 
-Single-page app con navigazione laterale fissa e sezioni tematiche (about, skills, experience, focus, work, portfolio e contact). I contenuti sono gestiti direttamente nei componenti React con uno stile tipografico marcato, animazioni custom, preview “hover-follow” e modali con carousel media.
+Single-page app con sezioni `about`, `skills`, `experience`, `focus`, `work` e `contact`.
+L'interfaccia combina layout editoriale, animazioni custom, preview hover-follow su desktop e interazioni mobile dedicate.
+
+## Novita recenti
+
+- Navigazione mobile ridisegnata con menu overlay fullscreen (hamburger, lock scroll e transizioni).
+- Link magnetici nella sidebar desktop (`MagneticLink`) e card progetto con effetto tilt 3D (`TiltCard`).
+- Miglioramenti accessibilita: apertura card via tastiera, chiusura modale con `Escape`, attributi ARIA nelle card/progetti.
+- Integrazione `@vercel/analytics` e `@vercel/speed-insights` direttamente in `App.tsx`.
+- Gestione media con mapping `toAssetPath()` + `utils/blob-manifest.json` per usare URL Vercel Blob quando disponibili.
 
 ## Stack
 
-- **React 19** + **TypeScript**
-- **Vite** per build e dev server
-- **Tailwind CSS** via CDN (config in `index.html`)
-- **lucide-react** per le icone
-- **Google Fonts**: Space Grotesk, Playfair Display, JetBrains Mono
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS via CDN (config in `index.html`)
+- lucide-react
+- @vercel/analytics + @vercel/speed-insights
+- Google Fonts: Space Grotesk, Playfair Display, JetBrains Mono
 
 ## Sezioni principali
 
-- **Hero**: titolo, ruolo e descrizione introduttiva.
-- **Skills**: elenco competenze con reveal immagine al passaggio del mouse e follower.
-- **Experience**: timeline professionale con dettagli e bullet principali.
-- **Focus**: schede con obiettivi, competenze linguistiche e approccio operativo.
-- **Work**: griglia lavori/progetti con dettagli in modale, carousel media, download e link esterni.
-- **Portfolio**: aree di specializzazione con hover preview/focus.
-- **Contact**: call-to-action verso LinkedIn e footer informativo.
+- Hero: titolo, ruolo e descrizione introduttiva.
+- Skills: elenco competenze con reveal immagine al passaggio del mouse (solo dispositivi hover-capable).
+- Experience: timeline professionale.
+- Focus: obiettivi, skill distintivi e lingue.
+- Work: griglia progetti con modale dettagliata, media gallery, download e link esterni.
+- Contact: CTA LinkedIn e footer.
 
-## Struttura del progetto
+## Struttura progetto
 
-```
+```text
 .
-├── App.tsx                # Layout principale e composizione sezioni
-├── components/            # Sezioni e componenti UI
-├── public/                # Asset pubblici (media/work, immagini, pdf, video)
-├── assets/                # Archivio raw (non servito direttamente)
-├── index.tsx              # Entry point React
-├── index.css              # Reset/stili base
-├── index.html             # Font, Tailwind CDN e animazioni custom
-└── vite.config.ts         # Configurazione Vite
+├── App.tsx
+├── components/
+├── public/                # asset statici locali (es. hover, avatar, icone)
+├── utils/
+│   ├── assetPath.ts       # resolver path locale/Vercel Blob
+│   └── blob-manifest.json # mapping path -> URL Blob
+├── scripts/
+│   ├── migrate-to-blob.js
+│   └── fast-optimize-images.js
+├── index.tsx
+├── index.css
+├── index.html
+├── vite.config.ts
+└── vercel.json
 ```
 
 ## Avvio locale
@@ -54,14 +69,12 @@ npm run preview
 
 ## Media e contenuti
 
-- Le risorse usate nei lavori sono servite da `public/media/work/...` (immagini, video e PDF/ZIP).
-- Le immagini per hover/preview e i media locali sono organizzati sotto `public/media/work`.
-- I dati dei lavori speciali (sezione **Work**) sono definiti in `components/WorkSection.tsx`.
-
-## Note
-
-- `MatrixSection.tsx` è presente ma non montata in `App.tsx` (sezione profilo opzionale).
+- I dati dei progetti sono definiti in `components/WorkSection.tsx`.
+- Le immagini hover locali sono in `public/media/hover`.
+- I media della sezione Work usano path `/media/work/...` risolti da `toAssetPath()`:
+  - URL Blob se presenti nel manifest.
+  - fallback al path locale assoluto se non mappati.
 
 ---
 
-**LR Portfolio** — Luca Ragazzini ©2026
+**LR Portfolio** - Luca Ragazzini ©2026
