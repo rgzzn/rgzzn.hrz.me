@@ -119,7 +119,6 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
             }}
             tabIndex={0}
           >
-            <div className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-primary/70 md:hidden animate-mobile-glow" />
             <div className="absolute inset-0 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(120deg,rgba(168,85,247,0.08),transparent,rgba(168,85,247,0.05))] bg-[length:200%_200%] animate-card-shimmer" />
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 z-20 relative pointer-events-none">
               <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter uppercase ${item.font || ''}`}>

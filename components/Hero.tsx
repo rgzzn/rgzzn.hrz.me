@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
 
         <div className="mt-6 md:hidden relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary/40 px-4 py-2 bg-primary/10">
           <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary">Nuovi progetti</span>
-          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-mobile-float" />
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(168,85,247,0.22),transparent)] bg-[length:220%_100%] animate-mobile-sheen" />
         </div>
 

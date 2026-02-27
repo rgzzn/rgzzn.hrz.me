@@ -207,6 +207,39 @@ const workItems: WorkItem[] = [
       { label: 'Packaging Caffè (PDF)', url: '/media/work/host-milano/pdfs/packaging-caffe.pdf' },
     ],
   },
+  {
+    id: 'bipres-coral',
+    title: 'Bipres Website - Coral',
+    category: 'Website',
+    period: 'Dicembre 2022',
+    location: 'Portico di Romagna · Emilia Romagna',
+    label: 'HOST',
+    shortDescription:
+      'Refresh completo del sitoweb Bipres. Realizzato in React e Tailwind CSS. Progetto parziale',
+    description:
+      'Creata una versione più moderna del sitoweb originale di bipres datato 2014. Contenuti e immagini presi dalla fonte. Aggiornato ambiente da Wordpress a full React con Tailwind CSS',
+    highlights: [
+      'Aggiornato ambiente da Wordpress a full React con Tailwind CSS',
+      'Contenuti e immagini presi dalla fonte',
+      'Progetto parziale',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Wordpress'],
+    heroImage: '/media/work/bipres-coral/images/coral-1.webp',
+    previewMedia: [
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-1.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-2.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-3.webp' },
+    ],
+    carousel: [
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-1.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-2.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-3.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-4.webp' },
+      { type: 'image', src: '/media/work/bipres-coral/images/coral-5.webp' },
+    ],
+    downloads: [],
+    siteUrl: 'https://bipres.hrz.me',
+  },
 ];
 
 interface TiltCardProps {
@@ -415,7 +448,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         <div className="border border-black/10 dark:border-white/20 rounded-2xl p-6 backdrop-blur">
           <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] opacity-60">
             <span>Focus</span>
-            <span>2023 · 2026</span>
+            <span>2022 · 2026</span>
           </div>
           <div className="mt-6 space-y-4">
             {[
@@ -485,10 +518,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                 <div className="md:hidden inline-flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border border-primary/40 text-primary bg-primary/10 animate-mobile-glow">
                   tap per dettagli
                 </div>
-
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary md:hidden animate-mobile-float" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                     {item.category}
                   </span>
                   <span className="text-xs font-mono opacity-60">{item.period}</span>
