@@ -9,6 +9,10 @@ L'interfaccia combina layout editoriale, animazioni custom, preview hover-follow
 
 ## Novita recenti
 
+- Aggiornati copy, contenuti e dettagli visual di `Hero`, `SkillSection` e `TimelineSection` con focus piu netto su ruolo IT + Social.
+- `WorkSection` estesa con dettagli aggiornati del progetto `Bipres Website - Coral` e portfolio corrente (es. DashB App/DashB Website).
+- Aggiornate le icone nel documento HTML: favicon SVG prioritario con fallback `.ico` e `apple-touch-icon`.
+- Ottimizzazione asset immagine: conversione progressiva a `.webp` per avatar e immagini hover.
 - Navigazione mobile ridisegnata con menu overlay fullscreen (hamburger, lock scroll e transizioni).
 - Link magnetici nella sidebar desktop (`MagneticLink`) e card progetto con effetto tilt 3D (`TiltCard`).
 - Miglioramenti accessibilita: apertura card via tastiera, chiusura modale con `Escape`, attributi ARIA nelle card/progetti.
@@ -21,6 +25,7 @@ L'interfaccia combina layout editoriale, animazioni custom, preview hover-follow
 - Vite
 - Tailwind CSS via CDN (config in `index.html`)
 - lucide-react
+- @vercel/blob (supporto gestione asset/media via Blob API)
 - @vercel/analytics + @vercel/speed-insights
 - Google Fonts: Space Grotesk, Playfair Display, JetBrains Mono
 
