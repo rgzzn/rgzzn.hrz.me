@@ -68,7 +68,7 @@ const Navigation: React.FC = () => {
       {/* Mobile Hamburger Button */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed right-4 top-4 z-[60] flex h-12 w-12 flex-col items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/20 transition-all active:scale-90 md:hidden pb-[env(safe-area-inset-top)]"
+        className="fixed right-4 top-4 z-[60] flex h-12 w-12 flex-col items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-[rgba(255,255,255,0.2)] transition-all active:scale-90 md:hidden pb-[env(safe-area-inset-top)]"
         aria-label="Toggle Menu"
       >
         <div className="relative flex h-5 w-6 flex-col items-center justify-between">
@@ -96,7 +96,7 @@ const Navigation: React.FC = () => {
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-mono uppercase tracking-[0.2em] text-white/70 transition-all hover:text-white hover:scale-110 active:scale-95"
+              className="mobile-nav-link text-2xl font-mono uppercase tracking-[0.2em] transition-all hover:scale-110 active:scale-95"
               style={{
                 transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
                 transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
@@ -123,7 +123,7 @@ const Navigation: React.FC = () => {
           <MagneticLink
             key={item.id}
             href={`#${item.id}`}
-            className="flex-shrink-0 writing-vertical-rl rotate-180 text-[10px] sm:text-[11px] md:text-sm font-bold tracking-[0.25em] uppercase text-center py-2 px-1 hover:text-white transition-colors animate-enter-up active:animate-mobile-tap-scale md:active:animate-none"
+            className="flex-shrink-0 writing-vertical-rl rotate-180 text-[10px] sm:text-[11px] md:text-sm font-bold tracking-[0.25em] uppercase text-center py-2 px-1 hover:text-[#ffffff] transition-colors animate-enter-up active:animate-mobile-tap-scale md:active:animate-none"
             style={{
               animationDelay: `${400 + index * 100}ms`,
               opacity: 0,
