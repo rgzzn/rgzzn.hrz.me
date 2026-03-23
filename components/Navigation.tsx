@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { toAssetPath } from "../utils/assetPath";
+import { motion } from "framer-motion";
 
 const navItems = [
   { label: "About", id: "about" },
@@ -35,16 +36,18 @@ const MagneticLink: React.FC<{ children: React.ReactNode; href: string; classNam
   const { x, y } = position;
 
   return (
-    <a
+    <motion.a
       ref={ref}
       href={href}
       className={className}
-      style={{ ...style, transform: `translate(${x}px, ${y}px)` }}
+      style={style}
+      animate={{ x, y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {children}
-    </a>
+    </motion.a>
   );
 };
 

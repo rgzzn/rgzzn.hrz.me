@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toAssetPath } from '../utils/assetPath';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, useMotionTemplate } from 'framer-motion';
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -300,98 +301,66 @@ const TiltCard: React.FC<TiltCardProps> = ({
   ...props
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
-  const [opacity, setOpacity] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isTilting, setIsTilting] = useState(false);
+  
+  // Motion values avoid React renders during mousemove
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  // Relaxed springs to avoid stutter on mouse jump
+  const mouseXSpring = useSpring(x, { stiffness: 100, damping: 30, mass: 0.5 });
+  const mouseYSpring = useSpring(y, { stiffness: 100, damping: 30, mass: 0.5 });
+  
+  // Subtle tilt for better performance with heavy media
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [5, -5]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-5, 5]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-
     const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
-    const rotateY = ((x - centerX) / centerX) * 10;
-
-    setIsTilting(true);
-    setRotation({ x: rotateX, y: rotateY });
-    setGlarePosition({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
-    });
-    setOpacity(1);
-  };
-
-  const resetTilt = () => {
-    setIsTilting(false);
-    setRotation({ x: 0, y: 0 });
-    setOpacity(0);
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
   };
 
   const handleMouseEnter = () => {
-    setIsTilting(true);
     onMouseEnter?.();
   };
 
   const handleMouseLeave = () => {
-    resetTilt();
+    x.set(0);
+    y.set(0);
     onMouseLeave?.();
   };
 
   const handleBlur = () => {
-    resetTilt();
+    x.set(0);
+    y.set(0);
     onBlur?.();
   };
 
   return (
-    <div
+    <motion.div
       ref={cardRef}
-      className={`relative will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${className} ${isVisible ? "motion-safe:animate-mobile-3d-reveal" : "opacity-0"
-        }`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className={`relative ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onFocus={onFocus}
       onBlur={handleBlur}
       style={{
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(${isTilting ? 1.02 : 1}, ${isTilting ? 1.02 : 1}, ${isTilting ? 1.02 : 1})`,
-        transformStyle: "preserve-3d",
+        rotateX,
+        rotateY,
+        transformPerspective: 1000,
       }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       {...props}
     >
-      <div
-        className="absolute inset-0 pointer-events-none z-50 mix-blend-overlay opacity-0 transition-opacity duration-500"
-        style={{
-          background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%)`,
-          opacity: opacity,
-        }}
-      />
       {children}
-    </div>
+    </motion.div>
   );
 };
 
@@ -511,31 +480,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         {workItems.map((item) => (
           <TiltCard
             key={item.id}
-            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 transition-all duration-300 md:hover:shadow-2xl md:hover:shadow-black/10 dark:md:hover:shadow-white/5 active:scale-[0.99] md:animate-none cursor-pointer"
-            onMouseEnter={() => {
-              if (isHoverable) {
-                setActiveImage(toAssetPath(item.heroImage));
-                setActiveLabel(item.label);
-              }
-            }}
-            onMouseLeave={() => {
-              if (isHoverable) {
-                setActiveImage(null);
-                setActiveLabel(null);
-              }
-            }}
-            onFocus={() => {
-              if (isHoverable) {
-                setActiveImage(toAssetPath(item.heroImage));
-                setActiveLabel(item.label);
-              }
-            }}
-            onBlur={() => {
-              if (isHoverable) {
-                setActiveImage(null);
-                setActiveLabel(null);
-              }
-            }}
+            className="group relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/20 p-6 md:p-8 active:scale-[0.99] cursor-pointer"
             tabIndex={0}
             role="button"
             aria-haspopup="dialog"
@@ -605,12 +550,20 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
         ))}
       </div>
 
+      <AnimatePresence>
       {activeWork && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
           onClick={closeActiveWork}
         >
-          <div
+          <motion.div
+            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
             role="dialog"
             aria-modal="true"
             aria-labelledby="active-work-title"
@@ -794,9 +747,10 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                 )}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </section>
   );
 };

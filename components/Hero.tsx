@@ -1,5 +1,22 @@
 import React from 'react';
 import { Asterisk } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 120, damping: 14 } }
+};
 
 const Hero: React.FC = () => {
   return (
@@ -14,27 +31,43 @@ const Hero: React.FC = () => {
            </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] uppercase text-black dark:text-white">
-          <span className="block opacity-0 animate-enter-up">LUCA</span>
-          <span className="block opacity-0 animate-enter-up delay-100">RAGAZZINI</span>
-          <span className="flex flex-wrap items-baseline gap-2 opacity-0 animate-enter-up delay-200">
-            <span className="font-mono text-3xl md:text-5xl lg:text-6xl align-baseline opacity-100 bg-black text-white dark:bg-white dark:text-black px-2">
+        <motion.h1 
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] uppercase text-black dark:text-white"
+        >
+          <motion.span variants={item} className="block">LUCA</motion.span>
+          <motion.span variants={item} className="block">RAGAZZINI</motion.span>
+          <motion.span variants={item} className="flex flex-wrap items-baseline gap-2 mt-4">
+            <span className="font-mono text-3xl md:text-5xl lg:text-6xl align-baseline bg-black text-white dark:bg-white dark:text-black px-2">
               IT & SOCIAL MEDIA
             </span> 
             <span className="font-serif italic font-normal lowercase tracking-normal text-primary flex items-center gap-2">
               MANAGER
               <Asterisk className="w-8 h-8 md:w-12 md:h-12 animate-spin-slow md:animate-wiggle-soft text-black dark:text-white opacity-50" />
             </span>
-          </span>
-        </h1>
+          </motion.span>
+        </motion.h1>
         
-        <div className="mt-8 font-mono text-xs font-bold tracking-widest uppercase opacity-0 animate-enter-up delay-300 flex items-center gap-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, type: "spring", stiffness: 100, damping: 20 }}
+          className="mt-8 font-mono text-xs font-bold tracking-widest uppercase flex items-center gap-4"
+        >
           <span className="w-8 h-[2px] bg-primary animate-pulse"></span>
           <span>Forlì (FC), Italia</span>
-        </div>
+        </motion.div>
 
-        <p className="mt-8 text-lg md:text-xl leading-relaxed opacity-80 max-w-2xl font-serif italic border-l-2 border-black dark:border-white/20 pl-4">
-        IT & Social Media Manager con esperienza nella gestione di infrastrutture digitali, cybersecurity e comunicazione aziendale.<br></br>Integro governance IT e sviluppo di applicazioni web, curandone architettura, design e user experience in modo strategic e coerente.<br></br>Progetto soluzioni digitali affidabili e scalabili, unendo competenze tecniche, visione sistematica e sensibilità visiva.<br></br>Mi occupo inoltre della componente grafica e identitaria dei progetti: brand identity, materiali marketing e asset visivi allineati al posizionamento aziendale.</p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 0.8, y: 0 }}
+          transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
+          className="mt-8 text-lg md:text-xl leading-relaxed max-w-2xl font-serif italic border-l-2 border-black dark:border-white/20 pl-4"
+        >
+        IT & Social Media Manager con esperienza nella gestione di infrastrutture digitali, cybersecurity e comunicazione aziendale.<br></br>Integro governance IT e sviluppo di applicazioni web, curandone architettura, design e user experience in modo strategic e coerente.<br></br>Progetto soluzioni digitali affidabili e scalabili, unendo competenze tecniche, visione sistematica e sensibilità visiva.<br></br>Mi occupo inoltre della componente grafica e identitaria dei progetti: brand identity, materiali marketing e asset visivi allineati al posizionamento aziendale.
+        </motion.p>
 
         <div className="mt-6 md:hidden relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary/40 px-4 py-2 bg-primary/10">
           <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary">Nuovi progetti</span>

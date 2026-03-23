@@ -1,4 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+};
 
 const TimelineSection: React.FC = () => {
   return (
@@ -11,10 +17,22 @@ const TimelineSection: React.FC = () => {
 
       <div className="relative ml-2 md:ml-0 space-y-20">
         {/* Animated Vertical Line */}
-        <div className="absolute left-0 top-0 w-[2px] bg-black/20 dark:bg-white/20 h-full origin-top animate-grow-h"></div>
+        <motion.div 
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.5, ease: "anticipate" }}
+          className="absolute left-0 top-0 w-[2px] bg-black/20 dark:bg-white/20 h-full origin-top"
+        ></motion.div>
 
         {/* Item 1 */}
-        <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-200">
+        <motion.div 
+          variants={itemVariants} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-100px" }} 
+          className="relative pl-8 md:pl-16"
+        >
           <div className="absolute -left-[7px] top-2 w-4 h-4 rounded-full bg-primary border-2 border-black dark:border-white/20 z-10 animate-pulse-soft"></div>
           <span className="font-mono text-sm font-bold opacity-60 mb-2 block">In corso</span>
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">IT & Social Media Manager</h4>
@@ -33,10 +51,16 @@ const TimelineSection: React.FC = () => {
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Photo editing, color grading e valorizzazione asset tecnici.</span></li>
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Video editing e motion content per comunicazione B2B.</span></li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Item 2 */}
-        <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-500">
+        <motion.div 
+          variants={itemVariants} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-100px" }} 
+          className="relative pl-8 md:pl-16"
+        >
           <div className="absolute -left-[7px] top-2 w-4 h-4 rounded-full bg-white dark:bg-white border-2 border-black dark:border-white/20 z-10"></div>
           <span className="font-mono text-sm font-bold opacity-60 mb-2 block">Apr 2023 - Ottobre 2025</span>
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">IT Manager</h4>
@@ -52,10 +76,16 @@ const TimelineSection: React.FC = () => {
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Backup/DR con Veeam e NAS dedicati.</span></li>
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Incident response, analisi forense e remediation.</span></li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Item 3 */}
-        <div className="relative pl-8 md:pl-16 opacity-0 animate-enter-up delay-500">
+        <motion.div 
+          variants={itemVariants} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "-100px" }} 
+          className="relative pl-8 md:pl-16"
+        >
           <div className="absolute -left-[7px] top-2 w-4 h-4 rounded-full bg-white dark:bg-white border-2 border-black dark:border-white/20 z-10"></div>
           <span className="font-mono text-sm font-bold opacity-60 mb-2 block">Sep 2021 — Apr 2023</span>
           <h4 className="text-2xl md:text-4xl font-bold uppercase mb-4 tracking-tight">Purchasing Agent</h4>
@@ -68,7 +98,7 @@ const TimelineSection: React.FC = () => {
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Controllo ordini, tempi di consegna e reportistica.</span></li>
             <li className="flex gap-3"><span className="text-primary">▸</span><span>Supporto ai team tecnici e amministrativi.</span></li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

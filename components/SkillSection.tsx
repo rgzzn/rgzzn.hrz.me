@@ -1,5 +1,6 @@
 import React from 'react';
 import { toAssetPath } from '../utils/assetPath';
+import { motion } from 'framer-motion';
 
 interface SkillSectionProps {
   setActiveImage: (img: string | null) => void;
@@ -79,6 +80,21 @@ const items = [
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+};
+
 const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLabel, isHoverable }) => {
   return (
     <section id="skills" className="max-w-6xl mx-auto w-full relative mb-40">
@@ -88,9 +104,16 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
         </span>
       </div>
 
-      <div className="flex flex-col gap-8 md:gap-12 relative">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="flex flex-col gap-8 md:gap-12 relative"
+      >
         {items.map((item, index) => (
-          <div
+          <motion.div
+            variants={itemVariants}
             key={index}
             className="group relative py-4 border-b-2 border-black/20 dark:border-white/20 cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 transition-transform duration-300 md:hover:-translate-y-1 motion-safe:animate-mobile-bob md:animate-none"
             onMouseEnter={() => {
@@ -128,9 +151,9 @@ const SkillSection: React.FC<SkillSectionProps> = ({ setActiveImage, setActiveLa
                 {item.category}
               </span>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
