@@ -41,6 +41,39 @@ interface WorkSectionProps {
 
 const workItems: WorkItem[] = [
   {
+    id: 'sogni-riciclati',
+    title: 'Sogni Riciclati',
+    category: 'Website',
+    period: 'Marzo 2026',
+    location: 'Rocca San Casciano · Forlì-Cesena',
+    label: 'Sogni Riciclati',
+    shortDescription:
+      'Sito web per il progetto Sogni Riciclati. Realizzato e gestito su Framer',
+    description:
+      'Piattaforma web dedicata al progetto di artigianato Sogni Riciclati. Ho curato la progettazione UI/UX e lo sviluppo interattivo su Framer, realizzando un\'interfaccia moderna e dinamica che riflette i valori del riuso creativo e dell\'innovazione sostenibile.',
+    highlights: [
+      'Progettazione UI/UX incentrata sulla narrazione dell\'artigianato e della sostenibilità',
+      'Sviluppo interattivo e gestione dinamica dei contenuti tramite la piattaforma Framer',
+      'Layout completamente responsive ottimizzato per una navigazione fluida su ogni dispositivo',
+      'Focus sull\'esperienza utente per valorizzare i valori del riuso creativo e dell\'economia circolare',
+    ],
+    tags: ['Framer', 'UI/UX', 'Web Design', 'SEO'],
+    heroImage: '/media/work/sogni-riciclati/images/sogni-riciclati-1.webp',
+    previewMedia: [
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-1.webp' },
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-2.webp' },
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-3.webp' },
+    ],
+    carousel: [
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-1.webp' },
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-2.webp' },
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-3.webp' },
+      { type: 'image', src: '/media/work/sogni-riciclati/images/sogni-riciclati-4.webp' },
+    ],
+    downloads: [],
+    siteUrl: 'https://sogniriciclati.com',
+  },
+  {
     id: 'DashB',
     title: 'DashB App',
     category: 'TvOS App',
@@ -164,9 +197,9 @@ const workItems: WorkItem[] = [
       { type: 'image', src: '/media/work/render/images/valcolatte.webp' },
       { type: 'image', src: '/media/work/render/images/virgo.webp' },
       { type: 'image', src: '/media/work/render/images/virgo_1.webp' },
-      { type: 'video', src: '/media/work/render/videos/delta.mp4'},
-      { type: 'video', src: '/media/work/render/videos/valcolatte.mp4'},
-      { type: 'video', src: '/media/work/render/videos/virgo_video.mp4'},
+      { type: 'video', src: '/media/work/render/videos/delta.mp4' },
+      { type: 'video', src: '/media/work/render/videos/valcolatte.mp4' },
+      { type: 'video', src: '/media/work/render/videos/virgo_video.mp4' },
     ],
     downloads: [],
     siteUrl: null
@@ -337,9 +370,8 @@ const TiltCard: React.FC<TiltCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className={`relative will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${className} ${
-        isVisible ? "motion-safe:animate-mobile-3d-reveal" : "opacity-0"
-      }`}
+      className={`relative will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${className} ${isVisible ? "motion-safe:animate-mobile-3d-reveal" : "opacity-0"
+        }`}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -372,7 +404,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
     setActiveImage(null);
     setActiveLabel(null);
   }, [setActiveImage, setActiveLabel]);
-  
+
   const carouselMedia = useMemo(
     () => (activeWork ? activeWork.carousel : []),
     [activeWork]
@@ -427,7 +459,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
       handleOpen(item);
     }
   };
-  
+
   return (
     <section id="work" className="max-w-6xl mx-auto w-full mb-40">
       <div className="mb-12 opacity-40 flex justify-between items-end border-b border-black dark:border-white/20 pb-2">
@@ -512,7 +544,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
             onKeyDown={(event) => handleCardKeyDown(event, item)}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:animate-card-shimmer bg-[length:200%_200%]" />
-            
+
             <div className="relative z-10 flex flex-col h-full justify-between gap-6 pointer-events-none">
               <div className="space-y-4">
                 <div className="md:hidden inline-flex items-center gap-2 text-[9px] font-mono uppercase tracking-[0.22em] px-2.5 py-1 rounded-full border border-primary/40 text-primary bg-primary/10 animate-mobile-glow">
@@ -548,7 +580,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                     >
                       {media.type === 'video' ? (
                         <video src={toAssetPath(media.src)} className="h-full w-full object-cover" muted loop playsInline preload="metadata" />
-                      ) : ( 
+                      ) : (
                         <img src={toAssetPath(media.src)} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
                       )}
                     </div>
@@ -622,7 +654,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                       <p className="text-base md:text-lg font-mono leading-relaxed opacity-90">
                         {activeWork.description}
                       </p>
-                      
+
                       <div className="grid gap-4 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/5 dark:border-white/5">
                         <span className="text-[10px] font-mono uppercase tracking-[0.3em] opacity-40">Key Highlights</span>
                         <ul className="space-y-4">
@@ -650,12 +682,12 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
 
                   <div className="space-y-6 lg:sticky lg:top-0">
                     <div className="group relative overflow-hidden rounded-[2rem] border border-black/10 dark:border-white/10 aspect-[4/3] bg-black/5 dark:bg-white/5">
-                      <img 
-                        src={toAssetPath(activeWork.heroImage)} 
-                        alt="" 
+                      <img
+                        src={toAssetPath(activeWork.heroImage)}
+                        alt=""
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
@@ -753,9 +785,9 @@ const WorkSection: React.FC<WorkSectionProps> = ({ setActiveImage, setActiveLabe
                         />
                       )}
                       <div className="absolute bottom-6 left-6 px-4 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10">
-                         <span className="text-[10px] font-mono text-white tracking-widest">
-                            {carouselIndex + 1} / {carouselMedia.length}
-                         </span>
+                        <span className="text-[10px] font-mono text-white tracking-widest">
+                          {carouselIndex + 1} / {carouselMedia.length}
+                        </span>
                       </div>
                     </div>
                   </div>
