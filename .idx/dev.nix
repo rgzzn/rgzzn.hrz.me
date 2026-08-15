@@ -1,7 +1,7 @@
 {pkgs}: {
-  channel = "stable-24.05";
+  channel = "stable-25.11";
   packages = [
-    pkgs.nodejs_20
+    pkgs.nodejs_24
   ];
   idx.extensions = [
     "svelte.svelte-vscode"
